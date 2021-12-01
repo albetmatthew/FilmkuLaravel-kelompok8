@@ -136,7 +136,8 @@
                     </button> &nbsp; &nbsp; &nbsp;
                     <h3>MIFILM</h3>
                 </div>
-                <div class="container-fluid py-5 bg-light text-white">
+                <div class="container-fluid py-5  text-white"
+                style="background-color: #3d0000;">
                     <div class="container">
                       <h2 class="text-center mb-4">FILM BARU</h2>
                       
