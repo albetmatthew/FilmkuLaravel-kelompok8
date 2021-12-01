@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="p2/css/mdb.min.css">
     <link rel="stylesheet" href="css/style2.css">
-    <title>Registrasi/title>
+    <title>Registrasi</title>
 </head>
 <body>
     <div class="card card-registrasi">
@@ -17,29 +17,29 @@
             <form>
                 <div class="row mb-4">
                     <div class="col">
-                        <label class="form-label" for="form3Example1">Username</label>
+                        <label class="form-label" for="name">Nama Lengkap</label>
                         <div class="form-outline">
-                            <input type="text" id="form3Example1" class="form-control" />
+                            <input type="text" id="name" name="name" class="form-control" />
                         </div>
                     </div>
                     <div class="col">
-                        <label class="form-label" for="form3Example2">Email</label>
+                        <label class="form-label" for="username">Username</label>
                         <div class="form-outline">
-                            <input type="text" id="form3Example2" class="form-control" />
+                            <input type="text" id="username" name="username" class="form-control" />
                         </div>
                     </div>
                 </div>
                 <div class="row mb-4">
                     <div class="col">
-                        <label class="form-label" for="form3Example1">Kata Sandi</label>
+                        <label class="form-label" for="email">Email</label>
                         <div class="form-outline">
-                            <input type="text" id="form3Example1" class="form-control" />
+                            <input type="email" id="email"  name="email" class="form-control" />
                         </div>
                     </div>
                     <div class="col">
-                        <label class="form-label" for="form3Example2">Konfirmasi Kata Sandi</label>
+                        <label class="form-label" for="password">Kata Sandi</label>
                         <div class="form-outline">
-                            <input type="text" id="form3Example2" class="form-control" />
+                            <input type="password" id="password" name="password" class="form-control" />
                         </div>
                     </div>
                 </div>
@@ -51,6 +51,10 @@
                     <div class="col">
                         <button type="submit" class="btn btn-block">REGISTER</button>
                     </div>
+                    
+                </div>
+                <div class="row">
+                    <p class="text-center">Sudah punya akun? Ayo <a href="/login">login</a></p>
                 </div>
 <!--         
                 </div> -->

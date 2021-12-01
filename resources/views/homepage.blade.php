@@ -34,7 +34,7 @@
 
   <body>
     <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top d-flex align-items-cente">
+    <header id="header" class="fixed-top d-flex align-items-center">
       <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
         <h1 class="logo me-auto me-lg-0"><a href="index.html">MiFilm</a></h1>
 
@@ -43,8 +43,8 @@
         </nav>
         <!-- .navbar -->
         <div class="d-flex">
-          <a href="#suggestion" class="suggestion-btn scrollto d-none d-lg-flex">Masuk</a>
-          <a href="#suggestion" class="suggestion-btn scrollto d-none d-lg-flex">Daftar</a>
+          <a href="/login" class="suggestion-btn scrollto d-none d-lg-flex">Masuk</a>
+          <a href="/registration" class="suggestion-btn scrollto d-none d-lg-flex">Daftar</a>
         </div>
       </div>
     </header>

@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="p2/css/mdb.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/p2/css/mdb.min.css">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Login</title>
+    
 </head>
 <body>
+    
     <div class="card card-login">
         <div class="card-title">
             <h2>LOG IN</h2>
@@ -46,7 +48,7 @@
                 <div class="row d-flex justify-content-between m-auto">
                     <div class="col">
                         <button type="submit" class="btn btn-block">LOG IN</button>
-                        <p class="mt-3">Belum memiliki akun? <a href="registrasi.html">Daftar disini</a></p>
+                        <p class="mt-3">Belum memiliki akun? <a href="/registration">Daftar disini</a></p>
                     </div>
                 </div>
 <!--         
@@ -57,6 +59,6 @@
     </div>
 
     <!-- script js -->
-    <script src="p2/js/mdb.min.js"></script>
+    <script src="/p2/js/mdb.min.js"></script>
 </body>
 </html>
