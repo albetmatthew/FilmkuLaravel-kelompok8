@@ -72,7 +72,9 @@ Route::get('/registration', [RegistrationController::class, 'index'])->middlewar
 Route::post('/registration', [RegistrationController::class, 'store']);
 
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+Route::get('/dashboard', function () {
+    return view('dashboard.index');
+})->middleware('auth');
 
 Route::get('/daftarfilm', function () {
     return view('dashboard.films.index');
