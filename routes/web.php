@@ -23,7 +23,7 @@ Route::get('/', function () {
 
 Route::get('/login', function () {
     return view('login.index');
-})->middleware('guest');
+})->name('login')->middleware('guest');
 
 Route::post('/login', [LoginController::class, 'authenticate']);
 
