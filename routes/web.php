@@ -1,12 +1,13 @@
 <?php
 
-use App\Models\Category;
 use App\Models\User;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FilmController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\DashboardController;
+
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\DashboardPostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,10 +73,8 @@ Route::get('/registration', [RegistrationController::class, 'index'])->middlewar
 Route::post('/registration', [RegistrationController::class, 'store']);
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
-})->middleware('auth');
+// Route::get('/dashboard', function () {
+//     return view('dashboard.films.index');
+// })->middleware('auth');
 
-Route::get('/daftarfilm', function () {
-    return view('dashboard.films.index');
-})->middleware('auth');
+Route::resource('/dashboard/films', DashboardPostController::class)->middleware('auth');

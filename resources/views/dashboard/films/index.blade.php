@@ -20,7 +20,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
         crossorigin="anonymous">
     </script>
-    <link href="css/filmlist.css" rel="stylesheet" />
+    <link href="/css/filmlist.css" rel="stylesheet" />
     </head>
     <body>
         <div class="page">
@@ -40,8 +40,8 @@
                 </div>
                 <div class="sidebar-body">
                     <ul class="navigation-list">
-                        <li class="navigation-list-item">
-                            <a class="navigation-link" href="#">
+                        <li class="navigation-list-item active">
+                            <a class="navigation-link" href="/dashboard/films/">
                                 <div class="row">
                                     <div class="col-2">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
@@ -54,7 +54,7 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="navigation-list-item active">
+                        {{-- <li class="navigation-list-item active">
                             <a class="navigation-link" href="#">
                                 <div class="row">
                                     <div class="col-2">
@@ -67,7 +67,7 @@
                                     </div>
                                 </div>
                             </a>
-                        </li>
+                        </li> --}}
 
                     </ul>
                 </div>
@@ -91,9 +91,9 @@
                             </div>
                             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                 <div class="ml-auto p-4">
-                                    <button href="#" class="btn btn-secondary me-md-4" type="button"><i class="fas fa-plus"></i>
+                                    <a href="/dashboard/films/create" class="btn btn-secondary me-md-4" type="button"><i class="fas fa-plus"></i>
                                         <span class="fw-bold">Tambahkan Film</span>
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                             <form type="get" action="#">
@@ -118,7 +118,7 @@
                             <h6 class="m-0 font-weight-bold" style="color: #3D0000;">Tabel Daftar Film</h6>
                         </div>
                         <div class="card-body">
-                            <div class="table-responsive">
+                            {{-- <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable">
                                     <thead class="">
                                         <tr align="center">
@@ -146,7 +146,7 @@
                                             <td>55–56 menit</td>
                                             <td>Indonesia</td>
                                             <td>
-                                                <img src="assets/img/littlemom.jpg" alt class="img-fluid">
+                                                <img src="/assets/img/littlemom.jpg" alt class="img-fluid">
                                             </td>
                                             <td>
                                                 <div class="d-grid">
@@ -165,6 +165,43 @@
                                                 </div>
                                             </td>
                                         </tr>
+                                    </tbody>
+                                </table>
+                            </div> --}}
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable">
+                                    <thead class="">
+                                        <tr align="center">
+                                            <th width="3%" scope="col" class="">No</th>
+                                            <th width="10%" scope="col">Judul Film</th>
+                                            <th width="8%" scope="col">Genre</th>
+                                            <th width="10%" scope="col">Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($films as $film)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $film->title }}</td>
+                                            <td>{{ $film->category->name }}</td>
+                                            <td>
+                                                <div class="d-grid">
+                                                    <!-- you can use this as button delete logic -->
+                                                    <a href=""
+                                                        class="btn btn-danger btn-sm my-2"
+                                                        onclick="return confirm('Apakah Anda yakin?')">
+                                                        <i
+                                                            class="fas fa-trash">
+                                                        </i>
+                                                        <span>Hapus</span></a>
+                                                        <button href="#" class="btn btn-secondary btn-sm my-2" title="Edit">
+                                                            <i class="fas fa-edit"></i>
+                                                        <span>Edit</span>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

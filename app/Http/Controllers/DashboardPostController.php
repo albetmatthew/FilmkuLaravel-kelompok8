@@ -14,7 +14,9 @@ class DashboardPostController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.films.index', [
+            'films' => Film::where('user_id', auth()->user()->id)->get()
+        ]);
     }
 
     /**
@@ -24,7 +26,7 @@ class DashboardPostController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.films.create');
     }
 
     /**

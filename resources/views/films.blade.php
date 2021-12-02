@@ -32,7 +32,7 @@
                 </a>
                 
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="/daftarfilm">Dashboard</a></li>
+                    <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
                     <li><a class="dropdown-item" href="/logout">Keluar</a></li>
                   </ul>
                 @else
