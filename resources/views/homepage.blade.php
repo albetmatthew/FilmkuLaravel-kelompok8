@@ -75,7 +75,7 @@
             <h1>Welcome to <span>MIFILM</span></h1>
             <h2>Cari Film, acara TV yang cocok untuk mu.</h2>
 
-            <a href="#" class="btns btn-menu animated fadeInUp scrollto">Ketahui lebih banyak jenis film > </a>
+            <a href="/films" class="btns btn-menu animated fadeInUp scrollto">Ketahui lebih banyak jenis film > </a>
           </div>
           <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
             <a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" class="glightbox play-btn"></a>
@@ -122,7 +122,7 @@
             <div class="col-lg-4 col-md-6">
               <div class="member" data-aos="zoom-in" data-aos-delay="100">
                 <img src="assets/img/recommended/film-1.jpg" class="img-fluid" alt="" />
-                <div class="member-info">
+                {{-- <div class="member-info">
                   <div class="member-info-content">
                     <h4>Tomb Raider</h4>
                     <span
@@ -135,14 +135,14 @@
                     <a href=""><i class="bi bi-facebook"></i></a>
                     <a href=""><i class="bi bi-instagram"></i></a>
                   </div>
-                </div>
+                </div> --}}
               </div>
             </div>
 
             <div class="col-lg-4 col-md-6">
               <div class="member" data-aos="zoom-in" data-aos-delay="200">
                 <img src="assets/img/recommended/film-2.jpg" class="img-fluid" alt="" />
-                <div class="member-info">
+                {{-- <div class="member-info">
                   <div class="member-info-content">
                     <h4>Bad Boys for Life</h4>
                     <span
@@ -155,14 +155,14 @@
                     <a href=""><i class="bi bi-facebook"></i></a>
                     <a href=""><i class="bi bi-instagram"></i></a>
                   </div>
-                </div>
+                </div> --}}
               </div>
             </div>
 
             <div class="col-lg-4 col-md-6">
               <div class="member" data-aos="zoom-in" data-aos-delay="300">
                 <img src="assets/img/recommended/film-3.jpg" class="img-fluid" alt="" />
-                <div class="member-info">
+                {{-- <div class="member-info">
                   <div class="member-info-content">
                     <h4>The Avengers</h4>
                     <span
@@ -175,14 +175,14 @@
                     <a href=""><i class="bi bi-facebook"></i></a>
                     <a href=""><i class="bi bi-instagram"></i></a>
                   </div>
-                </div>
+                </div> --}}
               </div>
             </div>
 
             <div class="col-lg-4 col-md-6">
               <div class="member" data-aos="zoom-in" data-aos-delay="300">
                 <img src="assets/img/recommended/film-4.jpg" class="img-fluid" alt="" />
-                <div class="member-info">
+                {{-- <div class="member-info">
                   <div class="member-info-content">
                     <h4>Dua Garis Biru</h4>
                     <span
@@ -195,14 +195,14 @@
                     <a href=""><i class="bi bi-facebook"></i></a>
                     <a href=""><i class="bi bi-instagram"></i></a>
                   </div>
-                </div>
+                </div> --}}
               </div>
             </div>
 
             <div class="col-lg-4 col-md-6">
               <div class="member" data-aos="zoom-in" data-aos-delay="300">
                 <img src="assets/img/recommended/film-5.jpeg" class="img-fluid" alt="" />
-                <div class="member-info">
+                {{-- <div class="member-info">
                   <div class="member-info-content">
                     <h4>The Perfect Husband</h4>
                     <span
@@ -215,14 +215,14 @@
                     <a href=""><i class="bi bi-facebook"></i></a>
                     <a href=""><i class="bi bi-instagram"></i></a>
                   </div>
-                </div>
+                </div> --}}
               </div>
             </div>
 
             <div class="col-lg-4 col-md-6">
               <div class="member" data-aos="zoom-in" data-aos-delay="300">
                 <img src="assets/img/recommended/film-6.jpeg" class="img-fluid" alt="" />
-                <div class="member-info">
+                {{-- <div class="member-info">
                   <div class="member-info-content">
                     <h4>Brave</h4>
                     <span
@@ -235,14 +235,14 @@
                     <a href=""><i class="bi bi-facebook"></i></a>
                     <a href=""><i class="bi bi-instagram"></i></a>
                   </div>
-                </div>
+                </div> --}}
               </div>
             </div>
 
             <div class="col-lg-4 col-md-6">
               <div class="member" data-aos="zoom-in" data-aos-delay="300">
                 <img src="assets/img/recommended/film-7.jpg" class="img-fluid" alt="" />
-                <div class="member-info">
+                {{-- <div class="member-info">
                   <div class="member-info-content">
                     <h4>Frozen II</h4>
                     <span
@@ -255,14 +255,14 @@
                     <a href=""><i class="bi bi-facebook"></i></a>
                     <a href=""><i class="bi bi-instagram"></i></a>
                   </div>
-                </div>
+                </div> --}}
               </div>
             </div>
 
             <div class="col-lg-4 col-md-6">
               <div class="member" data-aos="zoom-in" data-aos-delay="300">
                 <img src="assets/img/recommended/film-8.jpg" class="img-fluid" alt="" />
-                <div class="member-info">
+                {{-- <div class="member-info">
                   <div class="member-info-content">
                     <h4>Up</h4>
                     <span
@@ -275,7 +275,7 @@
                     <a href=""><i class="bi bi-facebook"></i></a>
                     <a href=""><i class="bi bi-instagram"></i></a>
                   </div>
-                </div>
+                </div> --}}
               </div>
             </div>
 
@@ -300,7 +300,11 @@
             </div>
           </div>
 
-          <div class="text-center"><button type="submit">Lihat lebih banyak</button></div>
+          <div class="text-center">
+            <a href="/films">
+          
+              <button type="submit">Lihat lebih banyak</button></div>
+          </a>
         </div>
       </section>
       <!-- End Rekomendasi Populer Section -->

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FilmController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RegistrationController;
@@ -21,6 +22,9 @@ Route::get('/', function () {
 });
 
 
+//Ke halaman semua film
+Route::get('/films', [FilmController::class, 'index']);
+
 Route::get('/login', function () {
     return view('login.index');
 })->name('login')->middleware('guest');
@@ -37,5 +41,5 @@ Route::post('/registration', [RegistrationController::class, 'store']);
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
 Route::get('/daftarfilm', function () {
-    return view('filmlist');
+    return view('dashboard.films.index');
 })->middleware('auth');
