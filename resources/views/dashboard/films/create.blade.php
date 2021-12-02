@@ -161,7 +161,7 @@
                         <button type="submit" class="btn btn-warning mb-4">Batal</button>
                       </form> --}}
 
-                      <form method="posts" action="/dashboard/posts">
+                      <form method="posts" action="/dashboard/films">
                         @csrf
                         <div class="mb-3">
                           <label for="title" class="form-label">Title</label>
@@ -172,7 +172,7 @@
                             <input type="text" class="form-control" id="slug" name="slug">
                         </div>
                       
-                        <button type="submit" class="btn btn-primary">Create Post</button>
+                        <button type="submit" class="btn btn-primary">Create Film</button>
                       </form>
                      
                     </div>  
