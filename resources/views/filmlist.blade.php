@@ -215,7 +215,7 @@
                                             <td>
                                                 <div class="d-grid">
                                                     <!-- you can use this as button delete logic -->
-                                                    <a href="{{ route('admin.user.delete', [$user->id]) }}"
+                                                    <a href=""
                                                         class="btn btn-danger btn-sm my-2"
                                                         onclick="return confirm('Apakah Anda yakin?')">
                                                         <i
@@ -251,7 +251,7 @@
                                             <td>
                                                 <div class="d-grid">
                                                     <!-- you can use this as button delete logic -->
-                                                    <a href="{{ route('admin.user.delete', [$user->id]) }}"
+                                                    <a href=""
                                                         class="btn btn-danger btn-sm my-2"
                                                         onclick="return confirm('Apakah Anda yakin?')">
                                                         <i
@@ -287,7 +287,7 @@
                                             <td>
                                                 <div class="d-grid">
                                                     <!-- you can use this as button delete logic -->
-                                                    <a href="{{ route('admin.user.delete', [$user->id]) }}"
+                                                    <a href=""
                                                         class="btn btn-danger btn-sm my-2"
                                                         onclick="return confirm('Apakah Anda yakin?')">
                                                         <i
@@ -323,7 +323,7 @@
                                             <td>
                                                 <div class="d-grid">
                                                     <!-- you can use this as button delete logic -->
-                                                    <a href="{{ route('admin.user.delete', [$user->id]) }}"
+                                                    <a href=""
                                                         class="btn btn-danger btn-sm my-2"
                                                         onclick="return confirm('Apakah Anda yakin?')">
                                                         <i

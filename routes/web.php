@@ -35,3 +35,7 @@ Route::post('/registration', [RegistrationController::class, 'store']);
 
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+
+Route::get('/daftarfilm', function () {
+    return view('filmlist');
+})->middleware('auth');
