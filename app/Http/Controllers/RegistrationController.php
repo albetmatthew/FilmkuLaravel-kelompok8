@@ -28,6 +28,6 @@ class RegistrationController extends Controller
         User::create($validatedData);
 
 
-        return redirect('/login')->with('success', 'Akun kamu berhasil dibuat nih, yuk login!');
+        return redirect('/login')->with('success', 'Yeay, Akun kamu berhasil dibuat. Silahkan Login');
     }
 }

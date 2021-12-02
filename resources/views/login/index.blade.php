@@ -13,12 +13,18 @@
     
     <div class="card card-login">
         @if(session()->has('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{-- <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ session('success') }}
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
+        </div> --}}
+        <div class="alert alert-success d-flex align-items-center" role="alert">
+            🤗
+            <div>
+                {{ session('success') }}
+            </div>
+          </div>
         @endif
-        
+
         <div class="card-title">
             <h2>LOG IN</h2>
         </div>
@@ -66,6 +72,6 @@
     </div>
 
     <!-- script js -->
-    <script src="/p2/js/mdb.min.js"></script>
+    <script src="p2/js/mdb.min.js"></script>
 </body>
 </html>
