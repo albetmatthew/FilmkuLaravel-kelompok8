@@ -23,23 +23,39 @@
                 {{ session('success') }}
             </div>
           </div>
+          
+        @endif
+
+        @if(session()->has('loginError'))
+        {{-- <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div> --}}
+        <div class="alert alert-danger d-flex align-items-center" role="alert">
+            🤗
+            <div>
+                {{ session('loginError') }}
+            </div>
+          </div>
+          
         @endif
 
         <div class="card-title">
             <h2>LOG IN</h2>
         </div>
         <div class="card-body">
-            <form>
+            <form action="/login" method="post">
+                @csrf
                 <!-- Email input -->
-                <label class="form-label" for="form2Example1">Username:</label>
+                <label class="form-label" for="email">Email:</label>
                 <div class="form-outline mb-4">
-                <input type="email" id="form2Example1" class="form-control" />
+                <input type="email" id="email" name="email" class="form-control" value={{ old('email') }}>
                 </div>
             
                 <!-- Password input -->
-                <label class="form-label" for="form2Example2">Password:</label>
+                <label class="form-label" for="password">Password:</label>
                 <div class="form-outline mb-4">
-                <input type="password" id="form2Example2" class="form-control" />
+                <input type="password" id="password" name="password" class="form-control" value={{ old('password') }}>
                 </div>
             
                 <!-- 2 column grid layout for inline styling -->
@@ -54,7 +70,7 @@
                         id="form2Example34"
                         checked
                     />
-                    <label class="form-check-label rememberme" for="form2Example34"> Remember me </label>
+                    {{-- <label class="form-check-label rememberme" for="form2Example34"> Remember me </label> --}}
                     </div>
                 </div>
                 <!-- Submit button -->

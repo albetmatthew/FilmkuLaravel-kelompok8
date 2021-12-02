@@ -36,16 +36,33 @@
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top d-flex align-items-center">
       <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
-        <h1 class="logo me-auto me-lg-0"><a href="index.html">MiFilm</a></h1>
+        <h1 class="logo me-auto me-lg-0"><a href="/">MiFilm</a></h1>
 
         <nav id="navbar" class="navbar order-last order-lg-0">
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>
         <!-- .navbar -->
+        @auth
+        <div class="d-flex">
+          <div class="btn-group">
+            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <a href="" class="text-white">Halooo, {{ auth()->user()->name }}</a>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
+              <li><a class="dropdown-item" href="/logout">Logout</a></li>
+             
+            </ul>
+          </div>
+          
+        </div>
+        @else
         <div class="d-flex">
           <a href="/login" class="suggestion-btn scrollto d-none d-lg-flex">Masuk</a>
           <a href="/registration" class="suggestion-btn scrollto d-none d-lg-flex">Daftar</a>
         </div>
+        @endauth
+        
       </div>
     </header>
     <!-- End Header -->
