@@ -25,6 +25,10 @@ Route::get('/', function () {
 //Ke halaman semua film
 Route::get('/films', [FilmController::class, 'index']);
 
+//Single Post (detail)
+Route::get('films/{post:slug}', [FilmController::class, 'show']);
+
+
 Route::get('/login', function () {
     return view('login.index');
 })->name('login')->middleware('guest');
