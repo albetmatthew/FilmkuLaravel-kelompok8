@@ -12,7 +12,7 @@ class Category extends Model
 
     protected $guarded = ['id'];
 
-    public function posts()
+    public function films()
     {
         return $this->hasMany(Film::class);
     }

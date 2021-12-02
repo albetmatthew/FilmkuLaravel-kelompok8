@@ -58,19 +58,22 @@
     
       <div class="container">
         <div class="row">
+            <h1 class="mb-3 text-center text-white">{{ $title }}</h1>
+        </div>
+        <div class="row">
             @foreach($films as $film)
-            <div class="col-md-3 mb-4">
-                <div class="card">
+            <div class="col-md-3 col-6 mb-4">
+                <div class="card" ">
                     <div class="position-absolute px-3 py-2 " style="background-color: rgba(0, 0, 0, 0.5)"
                     >
                     <a href="/categories/{{ $film->category->slug }}" class="text-white text-decoration-none">{{ $film->category->name}}</a>
                     </div>
                     <img src="https://source.unsplash.com/500x400?{{ $film->category->name }}" class="card-img-top" alt="{{ $film->category->name }}">
                     <div class="card-body">
-                      <h5 class="card-title" >{{ $film->title }}</h5>
+                      <h5 class="card-title text-center" style="height: 100px" >{{ $film->title }}</h5>
                       
                 <small class="text-muted">
-                     <p>By. <a  href="/author/{{ $film->publisher->username }}" class="text-decoration-none">{{ $film->publisher->name }}</a> {{ $film->created_at->diffForHumans() }}</p>
+                     <p>By. <a  href="/publisher/{{ $film->publisher->username }}" class="text-decoration-none">{{ $film->publisher->name }}</a> {{ $film->created_at->diffForHumans() }}</p>
                 </small>
                     {{-- Deskripsi singkat film --}}
                       {{-- <p class="card-text">{{ $film->excerpt }}</p> --}}
