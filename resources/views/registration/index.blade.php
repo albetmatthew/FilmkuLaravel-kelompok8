@@ -14,7 +14,7 @@
             <h2>REGISTRASI</h2>
         </div>
         <div class="card-body">
-            <form>
+            <form action="/register" method="post">
                 <div class="row mb-4">
                     <div class="col">
                         <label class="form-label" for="name">Nama Lengkap</label>
