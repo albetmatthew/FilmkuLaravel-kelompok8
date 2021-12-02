@@ -14,33 +14,54 @@
             <h2>REGISTRASI</h2>
         </div>
         <div class="card-body">
-            <form action="/register" method="post">
+            <form action="/registration" method="post">
+                @csrf
                 <div class="row mb-4">
                     <div class="col">
                         <label class="form-label" for="name">Nama Lengkap</label>
                         <div class="form-outline">
-                            <input type="text" id="name" name="name" class="form-control" />
+                            <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Nama kamu.." value="{{ old('name') }}">
                         </div>
+                        @error('name')
+                        <div class="invalid-feedback">
+                          {{ $message }}
+                        </div>
+                    @enderror
                     </div>
                     <div class="col">
                         <label class="form-label" for="username">Username</label>
                         <div class="form-outline">
-                            <input type="text" id="username" name="username" class="form-control" />
+                            <input type="text" id="username" name="username" class="form-control @error('username') is-invalid @enderror" value="{{ old('username') }}" placeholder="Username kamu..">
                         </div>
+                        @error('username')
+                        <div class="invalid-feedback">
+                          {{ $message }}
+                        </div>
+                        @enderror
                     </div>
                 </div>
                 <div class="row mb-4">
                     <div class="col">
                         <label class="form-label" for="email">Email</label>
                         <div class="form-outline">
-                            <input type="email" id="email"  name="email" class="form-control" />
+                            <input type="email" id="email"  name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email kamu.." value="{{ old('email') }}">
                         </div>
+                        @error('email')
+                        <div class="invalid-feedback">
+                          {{ $message }}
+                        </div>
+                        @enderror
                     </div>
                     <div class="col">
                         <label class="form-label" for="password">Kata Sandi</label>
                         <div class="form-outline">
-                            <input type="password" id="password" name="password" class="form-control" />
+                            <input type="password" id="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password kamu..">
                         </div>
+                        @error('password')
+                        <div class="invalid-feedback">
+                          {{ $message }}
+                        </div>
+                        @enderror
                     </div>
                 </div>
             
