@@ -78,7 +78,10 @@ class DashboardPostController extends Controller
      */
     public function edit(Film $film)
     {
-        //
+        return view('dashboard.films.edit', [
+            'film' => $film,
+            'categories' => Category::all()
+        ]);
     }
 
     /**
@@ -90,7 +93,25 @@ class DashboardPostController extends Controller
      */
     public function update(Request $request, Film $film)
     {
-        //
+        $rules = [
+            'title' => 'required|max:255',
+            'category_id' => 'required',
+            'synopsis' => 'required'
+        ];
+
+        if ($request->slug != $film->slug) {
+            $rules['slug'] = 'required|unique:films';
+        }
+
+        $validatedData = $request->validate($rules);
+
+        $validatedData['user_id'] = auth()->user()->id;
+        $validatedData['excerpt'] = Str::limit(strip_tags($request->synopsis), 200);
+
+        Film::where('id', $film->id)
+            ->update($validatedData);
+
+        return redirect('/dashboard/films')->with('success', 'Film berhasil diubah!');
     }
 
     /**
@@ -101,7 +122,9 @@ class DashboardPostController extends Controller
      */
     public function destroy(Film $film)
     {
-        //
+        Film::destroy($film->id);
+
+        return redirect('/dashboard/films')->with('success', 'Film telah dihapus!');
     }
 
     public function checkSlug(Request $request)

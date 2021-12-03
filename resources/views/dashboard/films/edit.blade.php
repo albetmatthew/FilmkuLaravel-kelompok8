@@ -92,7 +92,7 @@
                 
                 <div class="container-fluid mx-auto">
                   <div class="row">
-                    <h4>Tambah Film</h4>
+                    <h4>Edit Film</h4>
                   </div>
                   <div class="row justify-content-center">
                     <div class="col-lg-10">
@@ -171,11 +171,12 @@
                         <button type="submit" class="btn btn-warning mb-4">Batal</button>
                       </form> --}}
 
-                      <form action="/dashboard/films" method="post">
+                      <form action="/dashboard/films/{{ $film->slug }}" method="post">
+                        @method('put')
                         @csrf
                         <div class="mb-3">
                           <label for="title" class="form-label">Title</label>
-                          <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" autofocus required value="{{ old('title') }}">
+                          <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" autofocus required value="{{ old('title', $film->title) }}">
                           @error('title')
                               <div class="invalid-feedback">
                                 {{ $message }}
@@ -184,7 +185,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="slug" class="form-label">Slug</label>
-                            <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug" required value="{{ old('slug') }}">
+                            <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug" required value="{{ old('slug', $film->slug) }}">
                             @error('slug')
                               <div class="invalid-feedback">
                                 {{ $message }}
@@ -195,7 +196,7 @@
                           <label for="slug" class="form-label">Genre</label>
                           <select class="form-select" aria-label="Default select example" name="category_id">
                             @foreach ($categories as $category)
-                              @if(old('category_id') == $category->id)
+                              @if(old('category_id', $category->id) == $category->id)
                             <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
                              @else 
                              <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -208,11 +209,11 @@
                           @error('synopsis')
                           <p class="text-danger">{{ $message }}</p>
                           @enderror
-                          <input id="synopsis" type="hidden" name="synopsis" value="{{ old('synopsis') }}">
+                          <input id="synopsis" type="hidden" name="synopsis" value="{{ old('synopsis', $film->synopsis) }}">
                           <trix-editor input="synopsis"></trix-editor>
                          </div>
                     
-                        <button type="submit" class="btn btn-primary mb-5">Create Film</button>
+                        <button type="submit" class="btn btn-primary mb-5">Update Film</button>
                       </form>
                      
                     </div>  

@@ -195,17 +195,19 @@
                                             <td>
                                                 <div class="d-grid">
                                                     <!-- you can use this as button delete logic -->
-                                                    <a href=""
-                                                        class="btn btn-danger btn-sm my-2"
-                                                        onclick="return confirm('Apakah Anda yakin?')">
-                                                        <i
-                                                            class="fas fa-trash">
-                                                        </i>
-                                                        <span>Hapus</span></a>
-                                                        <button href="#" class="btn btn-secondary btn-sm my-2" title="Edit">
+                                        
+                                                        <form action="/dashboard/films/{{ $film->slug }}" method="post">
+                                                            @method('delete')
+                                                            @csrf
+                                                            <button onclick="return confirm('Yakin mau dihapus?')" class="btn btn-danger btn-sm my-2 w-100"><i
+                                                                class="fas fa-trash">
+                                                            </i>Hapus</button>
+
+                                                        </form>
+                                                        <a href="/dashboard/films/{{ $film->slug }}/edit" class="btn btn-secondary btn-sm my-2" title="Edit">
                                                             <i class="fas fa-edit"></i>
                                                         <span>Edit</span>
-                                                    </button>
+                                                    </a>
                                                 </div>
                                             </td>
                                         </tr>
