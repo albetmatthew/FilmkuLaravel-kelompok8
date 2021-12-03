@@ -21,7 +21,17 @@
         crossorigin="anonymous">
     </script>
     <link href="/css/filmlist.css" rel="stylesheet" />
-    </head>
+   
+    {{-- TRIX EDITOR --}}
+    <link rel="stylesheet" type="text/css" href="/css/trix.css">
+    <script type="text/javascript" src="/js/trix.js"></script>
+    {{-- END OF TRIX EDITOR --}}
+    <style>
+      trix-toolbar [data-trix-button-group ="file-tools"]{
+        display: none;
+      }
+    </style>
+  </head>
     <body>
         <div class="page">
             <div class="sidebar">
@@ -161,17 +171,47 @@
                         <button type="submit" class="btn btn-warning mb-4">Batal</button>
                       </form> --}}
 
-                      <form method="posts" action="/dashboard/films">
+                      <form action="/dashboard/films" method="post">
                         @csrf
                         <div class="mb-3">
                           <label for="title" class="form-label">Title</label>
-                          <input type="text" class="form-control" id="title" name="title">
+                          <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" autofocus required value="{{ old('title') }}">
+                          @error('title')
+                              <div class="invalid-feedback">
+                                {{ $message }}
+                              </div>
+                          @enderror
                         </div>
                         <div class="mb-3">
                             <label for="slug" class="form-label">Slug</label>
-                            <input type="text" class="form-control" id="slug" name="slug">
+                            <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug" required value="{{ old('slug') }}">
+                            @error('slug')
+                              <div class="invalid-feedback">
+                                {{ $message }}
+                              </div>
+                          @enderror
                         </div>
-                      
+                        <div class="mb-3">
+                          <label for="slug" class="form-label">Genre</label>
+                          <select class="form-select" aria-label="Default select example" name="category_id">
+                            @foreach ($categories as $category)
+                              @if(old('category_id') == $category->id)
+                            <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+                             @else 
+                             <option value="{{ $category->id }}">{{ $category->name }}</option>
+                             @endif
+                            @endforeach                           
+                          </select>
+                         </div>
+                         <div class="mb-3">
+                          <label for="synopsis" class="form-label">Sinopsis</label>
+                          @error('synopsis')
+                          <p class="text-danger">{{ $message }}</p>
+                          @enderror
+                          <input id="synopsis" type="hidden" name="synopsis" value="{{ old('synopsis') }}">
+                          <trix-editor input="synopsis"></trix-editor>
+                         </div>
+                    
                         <button type="submit" class="btn btn-primary">Create Film</button>
                       </form>
                      
@@ -190,6 +230,20 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script>
+        const title = document.querySelector('#title');
+        const slug = document.querySelector('#slug');
+
+        title.addEventListener('change', function(){
+          fetch('/dashboard/films/checkSlug?title=' + title.value)
+            .then(response => response.json())
+            .then(data => slug.value = data.slug)
+        });
+
+        document.addEventListener('trix-file-accept', function(e){
+          e.preventDefault();
+        })
     </script>
     </body>
 </html>

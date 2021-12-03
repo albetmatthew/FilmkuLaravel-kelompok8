@@ -10,8 +10,7 @@ use Cviebrock\EloquentSluggable\Sluggable;
 
 class Film extends Model
 {
-    use HasFactory;
-    use App\Models\Sluggable;
+    use HasFactory, Sluggable;
 
     protected $guarded = ['id'];
 

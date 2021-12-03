@@ -76,5 +76,5 @@ Route::post('/registration', [RegistrationController::class, 'store']);
 // Route::get('/dashboard', function () {
 //     return view('dashboard.films.index');
 // })->middleware('auth');
-
+Route::get('/dashboard/films/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/dashboard/films', DashboardPostController::class)->middleware('auth');

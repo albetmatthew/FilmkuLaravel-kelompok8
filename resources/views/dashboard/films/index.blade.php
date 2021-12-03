@@ -108,7 +108,15 @@
                                         </button>
                                     </div>
                                 </div>
+                            
                             </form>
+                            <div class="row">
+                                @if(session()->has('success'))
+                                <div class="alert alert-success mt-4" role="alert">
+                                    {{ session('success') }}
+                                  </div>
+                                @endif
+                            </div>
                         </div>
                     </div> <br>
                 </div>
