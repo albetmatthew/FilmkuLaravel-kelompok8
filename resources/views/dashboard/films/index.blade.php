@@ -54,6 +54,20 @@
                                 </div>
                             </a>
                         </li>
+                        <li class="navigation-list-item active">
+                            <a class="navigation-link" href="/logout">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
+                                                <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 0v6h8V1H4zm8 8H4v6h8V9zM1 1v2h2V1H1zm2 3H1v2h2V4zM1 7v2h2V7H1zm2 3H1v2h2v-2zm-2 3v2h2v-2H1zM15 1h-2v2h2V1zm-2 3v2h2V4h-2zm2 3h-2v2h2V7zm-2 3v2h2v-2h-2zm2 3h-2v2h2v-2z"/>
+                                            </svg>
+                                    </div>
+                                    <div class="col-9">
+                                       Keluar
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
                         {{-- <li class="navigation-list-item active">
                             <a class="navigation-link" href="#">
                                 <div class="row">
@@ -183,7 +197,7 @@
                                             <th width="3%" scope="col" class="">No</th>
                                             <th width="10%" scope="col">Judul Film</th>
                                             <th width="8%" scope="col">Genre</th>
-                                            <th width="10%" scope="col">Aksi</th>
+                                            <th width="2%" scope="col">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -193,7 +207,7 @@
                                             <td>{{ $film->title }}</td>
                                             <td>{{ $film->category->name }}</td>
                                             <td>
-                                                <div class="d-grid">
+                                                {{-- <div class="d-grid">
                                                     <!-- you can use this as button delete logic -->
                                         
                                                         <form action="/dashboard/films/{{ $film->slug }}" method="post">
@@ -208,7 +222,16 @@
                                                             <i class="fas fa-edit"></i>
                                                         <span>Edit</span>
                                                     </a>
-                                                </div>
+                                                </div> --}}
+                                                <a href="/dashboard/films/{{ $film->slug }}" class="badge bg-info"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                <a href="/dashboard/films/{{ $film->slug }}/edit" class="badge bg-warning"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                                <form action="/dashboard/films/{{ $film->slug }}" method="post" class="d-inline">
+                                                    @method('delete')
+                                                    @csrf
+                                                    <button onclick="return confirm('Yakin mau dihapus?')" class="badge bg-danger border-0 "><i class="fa fa-trash" aria-hidden="true"></i></button>
+
+                                                </form>
+                                                {{-- <a href="" class="badge bg-danger"><i class="fa fa-trash" aria-hidden="true"></i></a> --}}
                                             </td>
                                         </tr>
                                         @endforeach
@@ -230,5 +253,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-    </body>
+    <script src="https://use.fontawesome.com/3c3f9f2cc5.js"></script>
+</body>
 </html>

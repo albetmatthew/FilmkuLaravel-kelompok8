@@ -16,8 +16,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
+        User::create([
+            'name' => 'Albet Matthew Best Nainggolan',
+            'username' => 'matbst',
+            'email' => 'mimikripower@gmail.com',
+            'password' => bcrypt('password')
+        ]);
+
+
         // \App\Models\User::factory(10)->create();
         User::factory(5)->create();
+
 
         Category::create([
             'name' => 'Action',
@@ -29,6 +39,16 @@ class DatabaseSeeder extends Seeder
             'slug' => 'romance'
         ]);
 
-        Film::factory(10)->create();
+        Category::create([
+            'name' => 'Horror',
+            'slug' => 'horror'
+        ]);
+
+        Category::create([
+            'name' => 'Comedy',
+            'slug' => 'comedy'
+        ]);
+
+        Film::factory(15)->create();
     }
 }

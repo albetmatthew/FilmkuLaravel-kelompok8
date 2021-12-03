@@ -92,7 +92,7 @@
                 
                 <div class="container-fluid mx-auto">
                   <div class="row">
-                    <h4>Edit Film</h4>
+                    <h4 class="mt-3 text-center">🖥 Edit Film</h4>
                   </div>
                   <div class="row justify-content-center">
                     <div class="col-lg-10">

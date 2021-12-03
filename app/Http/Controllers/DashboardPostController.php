@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Film;
 use App\Models\Category;
 use Illuminate\Http\Request;
-use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Support\Str;
 
 
@@ -43,14 +43,19 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
-        return $request->file('image')->store('film-images');
+
 
         $validatedData = $request->validate([
             'title' => 'required|max:255',
             'slug' => 'required|unique:films',
             'category_id' => 'required',
+            'image' => 'image|file|max:1024',
             'synopsis' => 'required'
         ]);
+
+        if ($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('film-images');
+        }
 
         $validatedData['user_id'] = auth()->user()->id;
         $validatedData['excerpt'] = Str::limit(strip_tags($request->synopsis), 200);
@@ -68,7 +73,9 @@ class DashboardPostController extends Controller
      */
     public function show(Film $film)
     {
-        //
+        return view('dashboard.films.show', [
+            'film' => $film
+        ]);
     }
 
     /**

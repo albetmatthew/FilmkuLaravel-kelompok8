@@ -21,8 +21,8 @@ class FilmFactory extends Factory
             'synopsis' => collect($this->faker->paragraphs(mt_rand(5, 10)))->map(function ($p) {
                 return "<p>$p</p>";
             })->implode(''),
-            'user_id' => mt_rand(1, 5),
-            'category_id' => mt_rand(1, 2)
+            'user_id' => mt_rand(1, 6),
+            'category_id' => mt_rand(1, 3)
         ];
     }
 }
