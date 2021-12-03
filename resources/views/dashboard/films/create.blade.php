@@ -171,7 +171,7 @@
                         <button type="submit" class="btn btn-warning mb-4">Batal</button>
                       </form> --}}
 
-                      <form action="/dashboard/films" method="post">
+                      <form action="/dashboard/films" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
                           <label for="title" class="form-label">Title</label>
@@ -203,6 +203,10 @@
                             @endforeach                           
                           </select>
                          </div>
+                         <div class="mb-3">
+                          <label for="image" class="form-label">Poster Film</label>
+                          <input class="form-control" type="file" id="image" name="image">
+                        </div>
                          <div class="mb-3">
                           <label for="synopsis" class="form-label">Sinopsis</label>
                           @error('synopsis')

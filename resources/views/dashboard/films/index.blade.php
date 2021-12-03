@@ -86,7 +86,7 @@
                                 <div class="align-items-center mt-3">
                                     <!-- <h1 class="h3 mb-1 text-gray-800 text-center">FILM</h1>
                                     <hr class="col-2 mx-auto"> -->
-                                    <p class="fw-normal fs-4 text-center">Silahkan tambahkan film terbaru</p>
+                                    <h4 class="text-center my-3">Halo 🤗, {{ auth()->user()->name }} </h4>
                                 </div>
                             </div>
                             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
