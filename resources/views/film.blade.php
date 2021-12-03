@@ -34,6 +34,14 @@
  
  
     <link rel="stylesheet" type="text/css" href="css/theme.css">
+    <style>
+        .entity-title, .entity-list-title, .section-title{
+            color: #ffffff;
+        }
+        a {
+            color: #e01238;
+        }
+    </style>
   </head>
 
   <body>
@@ -117,25 +125,25 @@
                                             </div>
                                         </div>
                                     </div>
+            
+                                          
                                     <ul class="entity-list">
                                         <li>
-                                            <span class="entity-list-title">Release:</span>July 21, 2014 (Dolby Theatre), August 1, 2014 (United States)</li>
+                                            <span class="entity-list-title">Studio:</span>Pixar Studios</li>
                                         <li>
-                                            <span class="entity-list-title">Directed:</span>
+                                            <span class="entity-list-title">Penulis:</span>
                                             <a class="content-link" href="#">Lindson Wardens</a>,
-                                            <a class="content-link" href="#">Anabelle One</a>
+                                            
                                         </li>
                                         <li>
-                                            <span class="entity-list-title">Starring:</span>
-                                            <a class="content-link" href="#">Octopus Wardens</a>,
-                                            <a class="content-link" href="#">Quanta Wardens</a>,
-                                            <a class="content-link" href="#">Anabelle Two</a>,
-                                            <a class="content-link" href="#">Anabelle Three</a>
+                                            <span class="entity-list-title">Tahun Rilis:</span>
+                                            <a class="content-link" href="#">2014</a>,
+                                           
                                         </li>
                                         <li>
-                                            <span class="entity-list-title">Production company:</span>
-                                            <a class="content-link" href="#">Re-Production Bro.</a>,
-                                            <a class="content-link" href="#">Pentakid</a>
+                                            <span class="entity-list-title">Negara:</span>
+                                            <a class="content-link" href="#">Indonesia</a>,
+                                    
                                         </li>
                                         <li>
                                             <span class="entity-list-title">Country:</span>
@@ -150,7 +158,7 @@
                         </div>
                         <div class="section-line">
                             <div class="section-head">
-                                <h2 class="section-title text-uppercase">Synopsis</h2>
+                                <h2 class="section-title text-uppercase mb-3">Sinopsis</h2>
                             </div>
                             <div class="section-description">
                                 <p class="lead">Lead text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>

@@ -78,3 +78,8 @@ Route::post('/registration', [RegistrationController::class, 'store']);
 // })->middleware('auth');
 Route::get('/dashboard/films/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/dashboard/films', DashboardPostController::class)->middleware('auth');
+
+
+Route::get('/film', function () {
+    return view('film');
+});

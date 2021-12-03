@@ -119,8 +119,19 @@
                             <button onclick="return confirm('Yakin mau dihapus?')" class="btn btn-danger border-0"><i class="fa fa-trash" aria-hidden="true"></i> Hapus</button>
 
                         </form>
+                        @if($film->image)
+                        <div style="max-height: 350px; overflow: hidden;">
+                            <img src="{{ asset('storage/' . $film->image) }}" alt="{{ $film->category->name }}" class="img-fluid mt-3">
+                        </div>
+                        
+                        @else
                         <img src="https://source.unsplash.com/1200x400?{{ $film->category->name }}" alt="{{ $film->category->name }}" class="img-fluid mt-3">
-                    <article class="my-3 fs-5">
+                        @endif
+                        
+                        
+                    
+                    
+                        <article class="my-3 fs-5">
                         {!! $film->synopsis !!}
                     </article>
                     <a href="/dashboard/films" class="mt-4 text-bold">Back to Posts</a>

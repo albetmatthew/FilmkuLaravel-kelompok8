@@ -60,16 +60,37 @@
         <div class="row">
             <h1 class="mb-3 text-center text-white">{{ $title }}</h1>
         </div>
+        @if($films->count())
         <div class="row">
-            @foreach($films as $film)
+          <div class="card mb-3">
+            <img src="https://source.unsplash.com/1200x400?{{ $films[0]->category->name }}" class="card-img-top img-fluid" alt="{{ $films[0]->category->name }}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><a class="text-decoration-none text-dark" href="/posts/{{ $films[0]->slug }}">{{ $films[0]->title }}</a></h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            @foreach($films->skip(1) as $film)
             <div class="col-md-3 col-6 mb-4">
-                <div class="card" ">
+                <div class="card">
                     <div class="position-absolute px-3 py-2 " style="background-color: rgba(0, 0, 0, 0.5)"
                     >
                     <a href="/categories/{{ $film->category->slug }}" class="text-white text-decoration-none">{{ $film->category->name}}</a>
                     </div>
+
+                    @if($film->image)
+                   
+                        <img src="{{ asset('storage/' . $film->image) }}" alt="{{ $film->category->name }}" class="img-fluid">
+                  
+                    
+                    @else
                     <img src="https://source.unsplash.com/500x400?{{ $film->category->name }}" class="card-img-top" alt="{{ $film->category->name }}">
-                    <div class="card-body">
+                    @endif
+
+                   
+                    <div class="card-body bg-dark text-white">
                       <h5 class="card-title text-center" style="height: 100px" >{{ $film->title }}</h5>
                       
                 <small class="text-muted">
@@ -77,13 +98,14 @@
                 </small>
                     {{-- Deskripsi singkat film --}}
                       {{-- <p class="card-text">{{ $film->excerpt }}</p> --}}
-                      <a href="/films/{{ $film->slug}}" class="btn bg-dark text-white w-100">Detail Film</a>
+                      <a href="/films/{{ $film->slug}}" class="btn bg-light  w-100">Detail Film</a>
                     </div>
                   </div>
                   
             </div>
             @endforeach
         </div>
+        @endif
     </div>
 
 
