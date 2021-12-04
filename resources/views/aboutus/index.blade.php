@@ -69,49 +69,9 @@
     </header>
     <!-- End Header -->
 
-    <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex align-items-center">
-      <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
-        <div class="row">
-          <div class="col-lg-8">
-            <h1>Welcome to <span>MIFILM</span></h1>
-            <h2>Cari Film, acara TV yang cocok untuk mu.</h2>
-
-            <a href="/films" class="btns btn-menu animated fadeInUp scrollto">Ketahui lebih banyak jenis film > </a>
-          </div>
-          <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
-            <a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" class="glightbox play-btn"></a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Hero -->
 
     <main id="main">
-      <!-- ======= About Section ======= -->
-      <section id="about" class="about">
-        <div class="container" data-aos="fade-up">
-          <div class="row">
-            <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
-              <div class="about-img">
-                <img src="assets/img/about.jpg" alt="" />
-              </div>
-            </div>
-            <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-              <h1>Jelajahi informasi mengenai film yang ingin kamu tonton bersama MIFILM</h1>
-              <p class="fst-italic">Rekomendasi film disertai informasi berikut</p>
-              <ul>
-                <li><i class="bi bi-check-circle"></i>Penulis</li>
-                <li><i class="bi bi-check-circle"></i>Genre</li>
-                <li><i class="bi bi-check-circle"></i>Sinopsis</li>
-              </ul>
-              <p>dan masih banyak lagi !!!</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End About Section -->
-
+     
       <!-- ======= Rekomendasi Populer Section ======= -->
       <section id="recommended" class="recommended section-bg">
         <div class="container" data-aos="fade-up">
@@ -124,7 +84,7 @@
             <div class="col-lg-4 col-md-6">
               <div class="member" data-aos="zoom-in" data-aos-delay="100">
                 <a href="/films/{{ $films[0]->slug }}"> 
-                <img src="{{ asset('storage/' . $films[0]->image) }}" class="img-fluid" alt="" />
+                <img src="}" class="img-fluid" alt="" />
                 </a>
                 {{-- <div class="member-info">
                   <div class="member-info-content">
