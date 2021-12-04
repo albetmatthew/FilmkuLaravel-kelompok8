@@ -84,7 +84,7 @@
                         </li> --}}
 
                     </ul>
-                    @can('admin')
+
                     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
                         <span>Administrator</span>
                     </h6>
@@ -105,7 +105,6 @@
                             </a>
                         </li> 
                     </ul>
-                    @endcan
                 </div>
             </div>
             <div class="content">
@@ -127,8 +126,8 @@
                             </div>
                             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                 <div class="ml-auto p-4">
-                                    <a href="/dashboard/films/create" class="btn btn-secondary me-md-4" type="button"><i class="fas fa-plus"></i>
-                                        <span class="fw-bold">Tambahkan Film</span>
+                                    <a href="/dashboard/categories/create" class="btn btn-secondary me-md-4" type="button"><i class="fas fa-plus"></i>
+                                        <span class="fw-bold">Tambahkan Genre Baru</span>
                                     </a>
                                 </div>
                             </div>
@@ -217,17 +216,15 @@
                                     <thead class="">
                                         <tr align="center">
                                             <th width="3%" scope="col" class="">No</th>
-                                            <th width="10%" scope="col">Judul Film</th>
-                                            <th width="8%" scope="col">Genre</th>
+                                            <th width="10%" scope="col">Genre Film</th>
                                             <th width="2%" scope="col">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($films as $film)
+                                        @foreach ($categories as $category)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $film->title }}</td>
-                                            <td>{{ $film->category->name }}</td>
+                                            <td>{{ $category->name }}</td>
                                             <td>
                                                 {{-- <div class="d-grid">
                                                     <!-- you can use this as button delete logic -->
@@ -245,9 +242,9 @@
                                                         <span>Edit</span>
                                                     </a>
                                                 </div> --}}
-                                                <a href="/dashboard/films/{{ $film->slug }}" class="badge bg-info"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                <a href="/dashboard/films/{{ $film->slug }}/edit" class="badge bg-warning"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                                                <form action="/dashboard/films/{{ $film->slug }}" method="post" class="d-inline">
+                                                <a href="/dashboard/categories/{{ $category->slug }}" class="badge bg-info"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                <a href="/dashboard/categories/{{ $category->slug }}/edit" class="badge bg-warning"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                                <form action="/dashboard/categories/{{ $category->slug }}" method="post" class="d-inline">
                                                     @method('delete')
                                                     @csrf
                                                     <button onclick="return confirm('Yakin mau dihapus?')" class="badge bg-danger border-0 "><i class="fa fa-trash" aria-hidden="true"></i></button>
@@ -277,4 +274,4 @@
     </script>
     <script src="https://use.fontawesome.com/3c3f9f2cc5.js"></script>
 </body>
-</html>
+</html> 

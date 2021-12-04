@@ -91,7 +91,7 @@
 
                    
                     <div class="card-body bg-dark text-white">
-                      <h5 class="card-title text-center" style="height: 100px" >{{ $film->title }}</h5>
+                      <h5 class="card-title text-center" style="height: 100px" >{{ $film->year }}</h5>
                       
                 <small class="text-muted">
                      <p>By. <a  href="/publisher/{{ $film->publisher->username }}" class="text-decoration-none">{{ $film->publisher->name }}</a> {{ $film->created_at->diffForHumans() }}</p>

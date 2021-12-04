@@ -432,14 +432,9 @@
                     <img src="assets/img/recommed_1.jpg" class="img-fluid" alt="" />
                   </div>
                   <div class="col-lg-6 pt-4 pt-lg-0 content">
-                    <h3>The Avengers</h3>
-                    <p class="fst-italic">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <ul>
-                      <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                      <li><i class="bi bi-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                      <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                    </ul>
-                    <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                    <h3>{{ $films[0]->title }}</h3>
+                    <p class="fst-italic">{{ $films[0]->excerpt }}</p>
+                  
                   </div>
                 </div>
               </div>
@@ -451,14 +446,9 @@
                     <img src="assets/img/recommed_2.jpg" class="img-fluid" alt="" />
                   </div>
                   <div class="col-lg-6 pt-4 pt-lg-0 content">
-                    <h3>Beauty and The Beast</h3>
-                    <p class="fst-italic">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <ul>
-                      <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                      <li><i class="bi bi-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                      <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                    </ul>
-                    <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                    <h3>{{ $films[1]->title }}</h3>
+                    <p class="fst-italic">{{ $films[1]->excerpt }}</p>
+                   
                   </div>
                 </div>
               </div>
@@ -470,14 +460,9 @@
                     <img src="assets/img/recommed_3.jpg" class="img-fluid" alt="" />
                   </div>
                   <div class="col-lg-6 pt-4 pt-lg-0 content">
-                    <h3>Orang Kaya Baru</h3>
-                    <p class="fst-italic">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <ul>
-                      <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                      <li><i class="bi bi-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                      <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                    </ul>
-                    <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                    <h3>{{ $films[2]->title }}</h3>
+                    <p class="fst-italic">{{ $films[2]->excerpt }}</p>
+              
                   </div>
                 </div>
               </div>

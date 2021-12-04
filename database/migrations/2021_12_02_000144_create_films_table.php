@@ -20,6 +20,11 @@ class CreateFilmsTable extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->string('image')->nullable();
+            $table->string('author')->nullable();
+            $table->string('studio')->nullable();
+            $table->string('country')->nullable();
+            $table->integer('duration')->nullable();
+            $table->string('year')->nullable();
             $table->text('excerpt');
             $table->text('synopsis');
             $table->timestamp('published_at')->nullable();

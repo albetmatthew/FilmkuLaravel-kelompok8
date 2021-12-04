@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 
 class DashboardPostController extends Controller
@@ -104,14 +105,24 @@ class DashboardPostController extends Controller
         $rules = [
             'title' => 'required|max:255',
             'category_id' => 'required',
+            'image' => 'image|file|max:1024',
             'synopsis' => 'required'
         ];
+
 
         if ($request->slug != $film->slug) {
             $rules['slug'] = 'required|unique:films';
         }
 
         $validatedData = $request->validate($rules);
+
+
+        if ($request->file('image')) {
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->store('film-images');
+        }
 
         $validatedData['user_id'] = auth()->user()->id;
         $validatedData['excerpt'] = Str::limit(strip_tags($request->synopsis), 200);
@@ -130,6 +141,9 @@ class DashboardPostController extends Controller
      */
     public function destroy(Film $film)
     {
+        if ($film->image) {
+            Storage::delete($film->image);
+        }
         Film::destroy($film->id);
 
         return redirect('/dashboard/films')->with('success', 'Film telah dihapus!');

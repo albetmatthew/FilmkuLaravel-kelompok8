@@ -49,30 +49,18 @@
                 <!-- Email input -->
                 <label class="form-label" for="email">Email:</label>
                 <div class="form-outline mb-4">
-                <input type="email" id="email" name="email" class="form-control" value={{ old('email') }}>
+                <input type="email" id="email" name="email" class="form-control" placeholder="masukkan email.." value={{ old('email') }}>
                 </div>
             
                 <!-- Password input -->
                 <label class="form-label" for="password">Password:</label>
                 <div class="form-outline mb-4">
-                <input type="password" id="password" name="password" class="form-control" value={{ old('password') }}>
+                <input type="password" id="password" name="password" class="form-control"  placeholder="masukkan password.." value={{ old('password') }}>
                 </div>
             
                 <!-- 2 column grid layout for inline styling -->
                 <div class="row mb-4">
-                <div class="col d-flex justify-content-start mb-3">
-                    <!-- Checkbox -->
-                    <div class="form-check">
-                    <input
-                        class="form-check-input"
-                        type="checkbox"
-                        value=""
-                        id="form2Example34"
-                        checked
-                    />
-                    {{-- <label class="form-check-label rememberme" for="form2Example34"> Remember me </label> --}}
-                    </div>
-                </div>
+               
                 <!-- Submit button -->
                 <div class="row d-flex justify-content-between m-auto">
                     <div class="col">

@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AdminCategoryController;
 use App\Models\User;
 use App\Models\Category;
+use App\Models\Film;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FilmController;
 use App\Http\Controllers\LoginController;
@@ -21,7 +23,9 @@ use App\Http\Controllers\DashboardPostController;
 */
 
 Route::get('/', function () {
-    return view('homepage');
+    return view('homepage', [
+        'films' => Film::latest()->get()
+    ]);
 });
 
 
@@ -83,3 +87,5 @@ Route::resource('/dashboard/films', DashboardPostController::class)->middleware(
 Route::get('/film', function () {
     return view('film');
 });
+
+Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');

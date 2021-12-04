@@ -49,6 +49,6 @@ class DatabaseSeeder extends Seeder
             'slug' => 'comedy'
         ]);
 
-        Film::factory(15)->create();
+        Film::factory(20)->create();
     }
 }
