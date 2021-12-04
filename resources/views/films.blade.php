@@ -8,13 +8,30 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <title>{{ $title }}</title>
+
+    <style>
+      .card {
+        border: 0;
+      }
+      body {
+  font-family: "Open Sans", sans-serif;
+  background: #0c0b09;
+  color: #fff;
+} 
+    </style>
   </head>
-  <body class="bg-dark ">
+  <body class="" style="background-color: black">
     {{-- Navbar --}}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
         <div class="container">
-          <a class="navbar-brand" href="#">MIFILM</a>
+          <a class="navbar-brand" href="/">MIFILM</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -62,14 +79,25 @@
         </div>
         @if($films->count())
         <div class="row">
-          <div class="card mb-3">
-            <img src="https://source.unsplash.com/1200x400?{{ $films[0]->category->name }}" class="card-img-top img-fluid" alt="{{ $films[0]->category->name }}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title"><a class="text-decoration-none text-dark" href="/posts/{{ $films[0]->slug }}">{{ $films[0]->title }}</a></h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          <div class="col-lg-12">
+            <div class="card mb-3">
+              @if($films[0]->image)
+                     
+              <img src="{{ asset('storage/' . $films[0]->image) }}" alt="{{ $films[0]->category->name }}" class="img-fluid">
+        
+          
+              @else
+                   <img src="https://source.unsplash.com/1200x400?{{ $films[0]->category->name }}" class="card-img-top img-fluid" alt="{{ $films[0]->category->name }}" class="card-img-top" alt="...">
+              @endif
+             
+              <div class="card-body">
+                <h5 class="card-title"><a class="text-decoration-none text-dark" href="/posts/{{ $films[0]->slug }}">{{ $films[0]->title }}</a></h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
             </div>
           </div>
+         
         </div>
         <div class="row">
             @foreach($films->skip(1) as $film)
@@ -91,10 +119,10 @@
 
                    
                     <div class="card-body bg-dark text-white">
-                      <h5 class="card-title text-center" style="height: 100px" >{{ $film->year }}</h5>
+                      <h5 class="card-title text-center" style="height: 100px" >{{ $film->title }}</h5>
                       
                 <small class="text-muted">
-                     <p>By. <a  href="/publisher/{{ $film->publisher->username }}" class="text-decoration-none">{{ $film->publisher->name }}</a> {{ $film->created_at->diffForHumans() }}</p>
+                     <p class="text-center">Published. <a  href="/publisher/{{ $film->publisher->username }}" class="text-decoration-none">{{ $film->publisher->name }}</a></p>
                 </small>
                     {{-- Deskripsi singkat film --}}
                       {{-- <p class="card-text">{{ $film->excerpt }}</p> --}}
