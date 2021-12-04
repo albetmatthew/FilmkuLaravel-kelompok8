@@ -211,7 +211,7 @@
                         @csrf
                         <div class="mb-3">
                           <label for="title" class="form-label">Title</label>
-                          <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" autofocus required value="{{ old('title') }}">
+                          <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" autofocus required value="{{ old('title') }}" placeholder="masukkan judul film..">
                           @error('title')
                               <div class="invalid-feedback">
                                 {{ $message }}
@@ -227,18 +227,86 @@
                               </div>
                           @enderror
                         </div>
-                        <div class="mb-3">
-                          <label for="slug" class="form-label">Genre</label>
-                          <select class="form-select" aria-label="Default select example" name="category_id">
-                            @foreach ($categories as $category)
-                              @if(old('category_id') == $category->id)
-                            <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
-                             @else 
-                             <option value="{{ $category->id }}">{{ $category->name }}</option>
-                             @endif
-                            @endforeach                           
-                          </select>
-                         </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="mb-3">
+                              <label for="studio" class="form-label">Studio</label>
+                              <input type="text" class="form-control @error('studio') is-invalid @enderror" id="studio" name="studio" value="{{ old('studio') }}" placeholder="masukkan studio film..">
+                              @error('studio')
+                                <div class="invalid-feedback">
+                                  {{ $message }}
+                                </div>
+                            @enderror
+                          </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="mb-3">
+                              <label for="author" class="form-label">Pengarang Cerita</label>
+                              <input type="text" class="form-control @error('author') is-invalid @enderror" id="author" name="author" value="{{ old('author') }}" placeholder="masukkan pengarang cerita..">
+                              @error('author')
+                                <div class="invalid-feedback">
+                                  {{ $message }}
+                                </div>
+                            @enderror
+                          </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="mb-3">
+                              <label for="country" class="form-label">Negara</label>
+                              <input type="text" class="form-control @error('country') is-invalid @enderror" id="country" name="country" value="{{ old('country') }}" placeholder="masukkan asal negara film..">
+                              @error('country')
+                                <div class="invalid-feedback">
+                                  {{ $message }}
+                                </div>
+                            @enderror
+                          </div>  
+                          </div>  
+                          <div class="col-md-6">
+                            <div class="mb-3">
+                              <label for="year" class="form-label">Tahun Rilis</label>
+                              <input type="text" class="form-control @error('year') is-invalid @enderror" id="year" name="year" value="{{ old('year') }}" placeholder="masukkan tahun rilis film..">
+                              @error('year')
+                                <div class="invalid-feedback">
+                                  {{ $message }}
+                                </div>
+                            @enderror
+                            </div>  
+                          </div>  
+                        </div>    
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="mb-3">
+                              <label for="duration" class="form-label">Durasi<small>(menit)</small></label>
+                              <input type="number" class="form-control @error('duration') is-invalid @enderror" id="duration" name="duration" value="{{ old('duration') }}" placeholder="masukkan durasi film..">
+                              @error('duration')
+                                <div class="invalid-feedback">
+                                  {{ $message }}
+                                </div>
+                            @enderror
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="mb-3">
+                              <label for="slug" class="form-label">Genre</label>
+                              <select class="form-select" aria-label="Default select example" name="category_id">
+                                @foreach ($categories as $category)
+                                  @if(old('category_id') == $category->id)
+                                <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+                                 @else 
+                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                 @endif
+                                @endforeach                           
+                              </select>
+                             </div>
+                          </div>
+                        </div>
+                    
+                   
+                 
+                 
+                        
                          <div class="mb-3">
                           <label for="image" class="form-label">Poster Film</label>
                           <img class="img-preview img-fluid mb-3 col-sm-5">

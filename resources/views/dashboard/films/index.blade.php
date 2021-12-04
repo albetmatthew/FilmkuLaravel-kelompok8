@@ -54,13 +54,23 @@
                                 </div>
                             </a>
                         </li>
+                        <li class="navigation-list-item {{ Request::is('/films') ? 'active' : '' }}">
+                            <a class="navigation-link" href="/films">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <i class="fa fa-globe" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="col-9">
+                                       Lihat Website
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
                         <li class="navigation-list-item">
                             <a class="navigation-link" href="/logout">
                                 <div class="row">
                                     <div class="col-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
-                                                <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 0v6h8V1H4zm8 8H4v6h8V9zM1 1v2h2V1H1zm2 3H1v2h2V4zM1 7v2h2V7H1zm2 3H1v2h2v-2zm-2 3v2h2v-2H1zM15 1h-2v2h2V1zm-2 3v2h2V4h-2zm2 3h-2v2h2V7zm-2 3v2h2v-2h-2zm2 3h-2v2h2v-2z"/>
-                                            </svg>
+                                        <i class="fa fa-sign-out" aria-hidden="true"></i>
                                     </div>
                                     <div class="col-9">
                                        Keluar
@@ -123,6 +133,7 @@
                                     <!-- <h1 class="h3 mb-1 text-gray-800 text-center">FILM</h1>
                                     <hr class="col-2 mx-auto"> -->
                                     <h4 class="text-center my-3">Halo 🤗, {{ auth()->user()->name }} </h4>
+                        
                                 </div>
                             </div>
                             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
@@ -132,7 +143,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <form type="get" action="#">
+                            {{-- <form type="get" action="#">
                                 <div class="row">
                                     <div class="col-md-3 bottom-6">
                                         <input value type="text" class="form-control" id="kata_kunci" name="search" placeholder="Cari...">
@@ -145,10 +156,10 @@
                                     </div>
                                 </div>
                             
-                            </form>
-                            <div class="row">
+                            </form> --}}
+                            <div class="row justify-content-center">
                                 @if(session()->has('success'))
-                                <div class="alert alert-success mt-4" role="alert">
+                                <div class="alert alert-success mt-4 col-md-7" role="alert">
                                     {{ session('success') }}
                                   </div>
                                 @endif
@@ -216,19 +227,25 @@
                                 <table class="table table-bordered" id="dataTable">
                                     <thead class="">
                                         <tr align="center">
-                                            <th width="3%" scope="col" class="">No</th>
+                                            <th width="2%" scope="col" class="">No</th>
+                                            <th width="5%" scope="col">Poster</th>
                                             <th width="10%" scope="col">Judul Film</th>
                                             <th width="8%" scope="col">Genre</th>
-                                            <th width="2%" scope="col">Aksi</th>
+                                            <th width="5%" scope="col">Studio</th>
+                                            <th width="3%" scope="col">Tahun Rilis</th>
+                                            <th width="4%" scope="col">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($films as $film)
                                         <tr>
-                                            <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $film->title }}</td>
-                                            <td>{{ $film->category->name }}</td>
-                                            <td>
+                                            <td class="align-middle text-center">{{ $loop->iteration }}</td>
+                                            <td class="align-middle text-center"><img src="{{ asset('storage/' . $film->image) }}" alt="" class="img-fluid" style="height: 75px"></td>
+                                            <td class="align-middle text-center">{{ $film->title }}</td>
+                                            <td class="align-middle text-center">{{ $film->category->name }}</td>
+                                            <td class="align-middle text-center">{{ $film->studio }}</td>
+                                            <td class="align-middle text-center">{{ $film->year }}</td>
+                                            <td class="align-middle text-center">
                                                 {{-- <div class="d-grid">
                                                     <!-- you can use this as button delete logic -->
                                         

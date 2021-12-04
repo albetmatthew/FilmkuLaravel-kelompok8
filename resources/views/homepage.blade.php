@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+aaaaa<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -12,12 +12,7 @@
     <link href="assets/img/mifilm-logo.jpg" rel="icon" />
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+   
 
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet" />
@@ -29,7 +24,13 @@
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
     <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="/assets/css/style.css" rel="stylesheet" />
+     <!-- Google Fonts -->
+     <link
+     href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+     rel="stylesheet"
+   />
+   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   </head>
 
   <body>
@@ -121,7 +122,9 @@
           <div class="row">
             <div class="col-lg-4 col-md-6">
               <div class="member" data-aos="zoom-in" data-aos-delay="100">
-                <img src="assets/img/recommended/film-1.jpg" class="img-fluid" alt="" />
+                <a href="/films/{{ $films[0]->slug }}"> 
+                <img src="{{ asset('storage/' . $films[0]->image) }}" class="img-fluid" alt="" />
+                </a>
                 {{-- <div class="member-info">
                   <div class="member-info-content">
                     <h4>Tomb Raider</h4>
@@ -141,7 +144,9 @@
 
             <div class="col-lg-4 col-md-6">
               <div class="member" data-aos="zoom-in" data-aos-delay="200">
-                <img src="assets/img/recommended/film-2.jpg" class="img-fluid" alt="" />
+                <a href="/films/{{ $films[1]->slug }}"> 
+                  <img src="{{ asset('storage/' . $films[1]->image) }}" class="img-fluid" alt="" />
+                </a>
                 {{-- <div class="member-info">
                   <div class="member-info-content">
                     <h4>Bad Boys for Life</h4>
@@ -161,7 +166,9 @@
 
             <div class="col-lg-4 col-md-6">
               <div class="member" data-aos="zoom-in" data-aos-delay="300">
-                <img src="assets/img/recommended/film-3.jpg" class="img-fluid" alt="" />
+                <a href="/films/{{ $films[2]->slug }}"> 
+                  <img src="{{ asset('storage/' . $films[2]->image) }}" class="img-fluid" alt="" />
+                </a>
                 {{-- <div class="member-info">
                   <div class="member-info-content">
                     <h4>The Avengers</h4>
@@ -181,7 +188,9 @@
 
             <div class="col-lg-4 col-md-6">
               <div class="member" data-aos="zoom-in" data-aos-delay="300">
-                <img src="assets/img/recommended/film-4.jpg" class="img-fluid" alt="" />
+                <a href="/films/{{ $films[3]->slug }}"> 
+                  <img src="{{ asset('storage/' . $films[3]->image) }}" class="img-fluid" alt="" />
+                </a>
                 {{-- <div class="member-info">
                   <div class="member-info-content">
                     <h4>Dua Garis Biru</h4>
@@ -201,7 +210,9 @@
 
             <div class="col-lg-4 col-md-6">
               <div class="member" data-aos="zoom-in" data-aos-delay="300">
-                <img src="assets/img/recommended/film-5.jpeg" class="img-fluid" alt="" />
+                <a href="/films/{{ $films[4]->slug }}"> 
+                  <img src="{{ asset('storage/' . $films[4]->image) }}" class="img-fluid" alt="" />
+                </a>
                 {{-- <div class="member-info">
                   <div class="member-info-content">
                     <h4>The Perfect Husband</h4>
@@ -428,8 +439,8 @@
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <div class="row event-item">
-                  <div class="col-lg-6">
-                    <img src="assets/img/recommed_1.jpg" class="img-fluid" alt="" />
+                  <div class="col-lg-6 text-center">
+                    <img src="{{ asset('storage/' . $films[0]->image) }}" class="img-fluid" alt="" style="height: 400px"/>
                   </div>
                   <div class="col-lg-6 pt-4 pt-lg-0 content">
                     <h3>{{ $films[0]->title }}</h3>
@@ -442,8 +453,8 @@
 
               <div class="swiper-slide">
                 <div class="row event-item">
-                  <div class="col-lg-6">
-                    <img src="assets/img/recommed_2.jpg" class="img-fluid" alt="" />
+                  <div class="col-lg-6 text-center">
+                    <img src="{{ asset('storage/' . $films[1]->image) }}" class="img-fluid" alt="" style="height: 400px"/>
                   </div>
                   <div class="col-lg-6 pt-4 pt-lg-0 content">
                     <h3>{{ $films[1]->title }}</h3>
@@ -456,8 +467,8 @@
 
               <div class="swiper-slide">
                 <div class="row event-item">
-                  <div class="col-lg-6">
-                    <img src="assets/img/recommed_3.jpg" class="img-fluid" alt="" />
+                  <div class="col-lg-6 text-center">
+                    <img src="{{ asset('storage/' . $films[2]->image) }}" class="img-fluid" alt="" style="height: 400px"/>
                   </div>
                   <div class="col-lg-6 pt-4 pt-lg-0 content">
                     <h3>{{ $films[2]->title }}</h3>

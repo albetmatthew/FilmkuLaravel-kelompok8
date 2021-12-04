@@ -4,13 +4,13 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>Deskripsi MIFILM</title>
+    <title>{{ $title }} - {{ $film->title }}</title>
     <meta content="" name="description" />
     <meta content="" name="keywords" />
 
     <!-- Favicons -->
-    <link href="assets/img/mifilm-logo.jpg" rel="icon" />
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link href="/assets/img/mifilm-logo.jpg" rel="icon" />
+    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
     <!-- Google Fonts -->
     <link
@@ -22,18 +22,18 @@
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
 
     <!-- Vendor CSS Files -->
-    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet" />
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link href="/assets/vendor/animate.css/animate.min.css" rel="stylesheet" />
+    <link href="/assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
     <!-- Template Main CSS File -->
+
  
- 
-    <link rel="stylesheet" type="text/css" href="css/theme.css">
+    <link rel="stylesheet" type="text/css" href="/css/theme.css">
     <style>
         .entity-title, .entity-list-title, .section-title{
             color: #ffffff;
@@ -49,16 +49,31 @@
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top d-flex align-items-cente">
         <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
-          <h1 class="logo me-auto me-lg-0"><a href="index.html">MiFilm</a></h1>
+          <h1 class="logo me-auto me-lg-0"><a href="/">MiFilm</a></h1>
   
           <nav id="navbar" class="navbar order-last order-lg-0">
             <i class="bi bi-list mobile-nav-toggle"></i>
           </nav>
-          <!-- .navbar -->
-          <div class="d-flex">
-            <a href="#suggestion" class="suggestion-btn scrollto d-none d-lg-flex">Masuk</a>
-            <a href="#suggestion" class="suggestion-btn scrollto d-none d-lg-flex">Daftar</a>
+          @auth
+        <div class="d-flex">
+          <div class="btn-group">
+            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <a href="" class="text-white">Halooo, {{ auth()->user()->name }}</a>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/dashboard/films">Dashboard</a></li>
+              <li><a class="dropdown-item" href="/logout">Logout</a></li>
+             
+            </ul>
           </div>
+          
+        </div>
+        @else
+        <div class="d-flex">
+          <a href="/login" class="suggestion-btn scrollto d-none d-lg-flex">Masuk</a>
+          <a href="/registration" class="suggestion-btn scrollto d-none d-lg-flex">Daftar</a>
+        </div>
+        @endauth
         </div>
       </header>
     
@@ -91,7 +106,15 @@
                             <div class="movie-info-entity">
                                 <div class="entity-poster" data-role="hover-wrap">
                                     <div class="embed-responsive embed-responsive-poster">
-                                        <img class="embed-responsive-item" src="img/Blick.jpg" alt="" width="370px" height="450" />
+                                        @if($film->image)
+                                        
+                                        <img src="{{ asset('storage/' . $film->image) }}" alt="{{ $film->category->name }}" class="embed-responsive-item card-img-top img-fluid">
+                                  
+                                    
+                                        @else
+                                        <img class="embed-responsive-item" src="https://source.unsplash.com/500x800?{{ $film->category->name }}" class="card-img-top img-fluid" alt="{{ $film->category->name }}" alt="" width="370px" height="450" />
+                                        @endif
+                                        
                                     </div>
                                     <div class="d-over bg-theme-lighted collapse animated faster" data-show-class="fadeIn show" data-hide-class="fadeOut show">
                                         
@@ -105,53 +128,40 @@
                                 </div>
                                 
                                 <div class="entity-content ">
-                                    <h2 class="entity-title">Blick</h2>
+                                    <h2 class="entity-title">{{ $film->title }}</h2>
                                     <div class="entity-category">
-                                        <a class="content-link" href="movies-blocks.html">comedy</a>,
-                                        <a class="content-link" href="movies-blocks.html">detective</a>
+                                        <a class="content-link" href="">{{ $film->category->name }}</a>
+                        
                                     </div>
                                    
                                     <div class="entity-info">
-                                        <div class="info-lines">
-                                            <div class="info info-short">
-                                                <span class="text-theme info-icon"><i class="fas fa-star"></i></span>
-                                                <span class="info-text">8,7</span>
-                                                <span class="info-rest">/10</span>
-                                            </div>
-                                            <div class="info info-short">
-                                                <span class="text-theme info-icon"><i class="fas fa-clock"></i></span>
-                                                <span class="info-text">130</span>
-                                                <span class="info-rest">&nbsp;min</span>
-                                            </div>
-                                        </div>
+                                        
                                     </div>
             
                                           
                                     <ul class="entity-list">
                                         <li>
-                                            <span class="entity-list-title">Studio:</span>Pixar Studios</li>
+                                            <span class="entity-list-title">Studio:</span>{{ $film->studio }}</li>
                                         <li>
                                             <span class="entity-list-title">Penulis:</span>
-                                            <a class="content-link" href="#">Lindson Wardens</a>,
+                                            <a class="content-link" href="#">{{ $film->author }}</a>
                                             
                                         </li>
                                         <li>
                                             <span class="entity-list-title">Tahun Rilis:</span>
-                                            <a class="content-link" href="#">2014</a>,
+                                            <a class="content-link" href="#">{{ $film->year }}</a>,
                                            
                                         </li>
                                         <li>
                                             <span class="entity-list-title">Negara:</span>
-                                            <a class="content-link" href="#">Indonesia</a>,
+                                            <a class="content-link" href="#">{{ $film->country }}</a>,
                                     
                                         </li>
                                         <li>
-                                            <span class="entity-list-title">Country:</span>
-                                            <a class="content-link" href="#">USA</a>,
-                                            <a class="content-link" href="#">India</a>
+                                            <span class="entity-list-title">Durasi:</span>
+                                            <a class="content-link" href="#">{{ $film->duration }} menit</a>,
                                         </li>
-                                        <li>
-                                            <span class="entity-list-title">Language:</span>english</li>
+                                    
                                     </ul>
                                 </div>
                             </div>
@@ -161,12 +171,9 @@
                                 <h2 class="section-title text-uppercase mb-3">Sinopsis</h2>
                             </div>
                             <div class="section-description">
-                                <p class="lead">Lead text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                                <h6 class="text-dark">Why do we use it?</h6>
-                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-                                <h6 class="text-dark">Where does it come from?</h6>
-                                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-                                <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+                                <p class="lead">{!! $film->synopsis !!}</p>
+                                
+                               
                             </div>
                             
                         </div>

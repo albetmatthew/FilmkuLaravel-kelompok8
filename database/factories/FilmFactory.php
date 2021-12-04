@@ -27,7 +27,7 @@ class FilmFactory extends Factory
                 return "<p>$p</p>";
             })->implode(''),
             'user_id' => mt_rand(1, 6),
-            'category_id' => mt_rand(1, 3)
+            'category_id' => mt_rand(1, 13)
         ];
     }
 }

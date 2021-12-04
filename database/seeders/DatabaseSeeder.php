@@ -49,6 +49,52 @@ class DatabaseSeeder extends Seeder
             'slug' => 'comedy'
         ]);
 
+        Category::create([
+            'name' => 'Adventure',
+            'slug' => 'adventure'
+        ]);
+
+        Category::create([
+            'name' => 'Science Fiction',
+            'slug' => 'science-fiction'
+        ]);
+
+        Category::create([
+            'name' => 'Crime',
+            'slug' => 'crime'
+        ]);
+
+        Category::create([
+            'name' => 'Drama',
+            'slug' => 'drama'
+        ]);
+
+        Category::create([
+            'name' => 'Fantasy',
+            'slug' => 'fantasy'
+        ]);
+
+        Category::create([
+            'name' => 'War',
+            'slug' => 'war'
+        ]);
+
+        Category::create([
+            'name' => 'Family',
+            'slug' => 'family'
+        ]);
+
+        Category::create([
+            'name' => 'Mystery',
+            'slug' => 'mystery'
+        ]);
+
+        Category::create([
+            'name' => 'Thriller',
+            'slug' => 'thriller'
+        ]);
+
+
         Film::factory(20)->create();
     }
 }

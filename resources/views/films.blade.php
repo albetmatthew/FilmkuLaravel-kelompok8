@@ -49,7 +49,7 @@
                 </a>
                 
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
+                    <li><a class="dropdown-item" href="/dashboard/films">Dashboard</a></li>
                     <li><a class="dropdown-item" href="/logout">Keluar</a></li>
                   </ul>
                 @else
@@ -79,28 +79,49 @@
         </div>
         @if($films->count())
         <div class="row">
-          <div class="col-lg-12">
+          <div class="col-lg-6">
             <div class="card mb-3">
               @if($films[0]->image)
-                     
+               <a href="/films/{{ $films[0]->slug }}">   
               <img src="{{ asset('storage/' . $films[0]->image) }}" alt="{{ $films[0]->category->name }}" class="img-fluid">
-        
+              </a>   
+            
+              @else
+              <a href="/films/{{ $films[0]->slug }}">  
+                   <img src="https://source.unsplash.com/1200x400?{{ $films[0]->category->name }}" class="card-img-top img-fluid" alt="{{ $films[0]->category->name }}" class="card-img-top" alt="...">
+                  </a>   
+                   @endif
+             
+              <div class="card-body bg-dark">
+                <h5 class="card-title text-center"><a class="text-decoration-none text-white " href="/films/{{ $films[0]->slug }}">{{ $films[0]->title }}</a></h5>
+              
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card mb-3">
+              @if($films[1]->image)
+              <a href="/films/{{ $films[1]->slug }}">       
+              <img src="{{ asset('storage/' . $films[1]->image) }}" alt="{{ $films[1]->category->name }}" class="img-fluid">
+              </a>
+              
           
               @else
-                   <img src="https://source.unsplash.com/1200x400?{{ $films[0]->category->name }}" class="card-img-top img-fluid" alt="{{ $films[0]->category->name }}" class="card-img-top" alt="...">
+              <a href="/films/{{ $films[1]->slug }}"> 
+                   <img src="https://source.unsplash.com/1200x400?{{ $films[1]->category->name }}" class="card-img-top img-fluid" alt="{{ $films[1]->category->name }}" class="card-img-top" alt="...">
+              </a>
               @endif
              
-              <div class="card-body">
-                <h5 class="card-title"><a class="text-decoration-none text-dark" href="/posts/{{ $films[0]->slug }}">{{ $films[0]->title }}</a></h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <div class="card-body bg-dark">
+                <h5 class="card-title text-center"><a class="text-decoration-none text-white" href="/films/{{ $films[1]->slug }}">{{ $films[1]->title }}</a></h5>
+               
               </div>
             </div>
           </div>
          
         </div>
         <div class="row">
-            @foreach($films->skip(1) as $film)
+            @foreach($films->skip(2) as $film)
             <div class="col-md-3 col-6 mb-4">
                 <div class="card">
                     <div class="position-absolute px-3 py-2 " style="background-color: rgba(0, 0, 0, 0.5)"
@@ -119,10 +140,10 @@
 
                    
                     <div class="card-body bg-dark text-white">
-                      <h5 class="card-title text-center" style="height: 100px" >{{ $film->title }}</h5>
+                      <h5 class="card-title text-center"  >{{ $film->title }}</h5>
                       
                 <small class="text-muted">
-                     <p class="text-center">Published. <a  href="/publisher/{{ $film->publisher->username }}" class="text-decoration-none">{{ $film->publisher->name }}</a></p>
+                     <p class="text-center">Published by <a  href="/publisher/{{ $film->publisher->username }}" class="text-decoration-none">{{ $film->publisher->name }}</a></p>
                 </small>
                     {{-- Deskripsi singkat film --}}
                       {{-- <p class="card-text">{{ $film->excerpt }}</p> --}}

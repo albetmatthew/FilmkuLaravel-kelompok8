@@ -64,13 +64,23 @@
                                 </div>
                             </a>
                         </li>
+                        <li class="navigation-list-item {{ Request::is('/films') ? 'active' : '' }}">
+                          <a class="navigation-link" href="/films">
+                              <div class="row">
+                                  <div class="col-2">
+                                      <i class="fa fa-globe" aria-hidden="true"></i>
+                                  </div>
+                                  <div class="col-9">
+                                     Lihat Website
+                                  </div>
+                              </div>
+                          </a>
+                      </li>
                         <li class="navigation-list-item">
                           <a class="navigation-link" href="/logout">
                               <div class="row">
                                   <div class="col-2">
-                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
-                                              <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 0v6h8V1H4zm8 8H4v6h8V9zM1 1v2h2V1H1zm2 3H1v2h2V4zM1 7v2h2V7H1zm2 3H1v2h2v-2zm-2 3v2h2v-2H1zM15 1h-2v2h2V1zm-2 3v2h2V4h-2zm2 3h-2v2h2V7zm-2 3v2h2v-2h-2zm2 3h-2v2h2v-2z"/>
-                                          </svg>
+                                      <i class="fa fa-sign-out" aria-hidden="true"></i>
                                   </div>
                                   <div class="col-9">
                                      Keluar
@@ -228,8 +238,72 @@
                               </div>
                           @enderror
                         </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="mb-3">
+                              <label for="studio" class="form-label">Studio</label>
+                              <input type="text" class="form-control @error('studio') is-invalid @enderror" id="studio" name="studio" value="{{ old('studio', $film->studio) }}" placeholder="masukkan studio film..">
+                              @error('studio')
+                                <div class="invalid-feedback">
+                                  {{ $message }}
+                                </div>
+                            @enderror
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="mb-3">
+                              <label for="author" class="form-label">Pengarang Cerita</label>
+                              <input type="text" class="form-control @error('author') is-invalid @enderror" id="author" name="author" value="{{ old('author', $film->author) }}" placeholder="masukkan pengarang cerita..">
+                              @error('author')
+                                <div class="invalid-feedback">
+                                  {{ $message }}
+                                </div>
+                            @enderror
+                          </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="mb-3">
+                              <label for="country" class="form-label">Negara</label>
+                              <input type="text" class="form-control @error('country') is-invalid @enderror" id="country" name="country" value="{{ old('country', $film->country) }}" placeholder="masukkan asal negara film..">
+                              @error('country')
+                                <div class="invalid-feedback">
+                                  {{ $message }}
+                                </div>
+                            @enderror
+                          </div>  
+                          </div>
+                          <div class="col-md-6">
+                            <div class="mb-3">
+                              <label for="year" class="form-label">Tahun Rilis</label>
+                              <input type="text" class="form-control @error('year') is-invalid @enderror" id="year" name="year" value="{{ old('year', $film->year) }}" placeholder="masukkan tahun rilis film..">
+                              @error('year')
+                                <div class="invalid-feedback">
+                                  {{ $message }}
+                                </div>
+                            @enderror
+                            </div>  
+
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="mb-3">
+                              <label for="duration" class="form-label">Durasi<small>(menit)</small></label>
+                              <input type="number" class="form-control @error('duration') is-invalid @enderror" id="duration" name="duration" value="{{ old('duration', $film->duration) }}" placeholder="masukkan durasi film..">
+                              @error('duration')
+                                <div class="invalid-feedback">
+                                  {{ $message }}
+                                </div>
+                            @enderror
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                              
+                   
                         <div class="mb-3">
-                          <label for="slug" class="form-label">Genre</label>
+                          <label for="genre" class="form-label">Genre</label>
                           <select class="form-select" aria-label="Default select example" name="category_id">
                             @foreach ($categories as $category)
                               @if(old('category_id', $category->id) == $category->id)
@@ -240,6 +314,12 @@
                             @endforeach                           
                           </select>
                          </div>
+                          </div>
+                        </div>
+                        
+                          
+                        
+                   
                          <div class="mb-3">
                           <label for="image" class="form-label">Poster Film</label>
                          <input type="hidden" name="oldImage" value="{{ $film->image }}">
@@ -314,6 +394,8 @@
            
 
         }
+
     </script>
-    </body>
+     <script src="https://use.fontawesome.com/3c3f9f2cc5.js"></script> 
+  </body>
 </html>

@@ -50,7 +50,7 @@
                 </div>
                 <div class="sidebar-body">
                     <ul class="navigation-list">
-                        <li class="navigation-list-item active">
+                        <li class="navigation-list-item {{ Request::is('dashboard/films*') ? 'active' : '' }}">
                             <a class="navigation-link" href="/dashboard/films/">
                                 <div class="row">
                                     <div class="col-2">
@@ -64,13 +64,24 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="navigation-list-item active">
+                        <li class="navigation-list-item {{ Request::is('/films') ? 'active' : '' }}">
+                            <a class="navigation-link" href="/films">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <i class="fa fa-globe" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="col-9">
+                                       Lihat Website
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+        
+                          <li class="navigation-list-item">
                             <a class="navigation-link" href="/logout">
                                 <div class="row">
                                     <div class="col-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16">
-                                                <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 0v6h8V1H4zm8 8H4v6h8V9zM1 1v2h2V1H1zm2 3H1v2h2V4zM1 7v2h2V7H1zm2 3H1v2h2v-2zm-2 3v2h2v-2H1zM15 1h-2v2h2V1zm-2 3v2h2V4h-2zm2 3h-2v2h2V7zm-2 3v2h2v-2h-2zm2 3h-2v2h2v-2z"/>
-                                            </svg>
+                                        <i class="fa fa-sign-out" aria-hidden="true"></i>
                                     </div>
                                     <div class="col-9">
                                        Keluar
@@ -120,8 +131,23 @@
 
                         </form>
                         @if($film->image)
-                        <div style="max-height: 350px; overflow: hidden;">
-                            <img src="{{ asset('storage/' . $film->image) }}" alt="{{ $film->category->name }}" class="img-fluid mt-3">
+                        <div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="{{ asset('storage/' . $film->image) }}" alt="{{ $film->category->name }}" class="img-fluid mt-3">
+                                </div>
+                                <div class="col-md-9">
+                                    <ul class="mt-3">
+                                        <li>Pengarang Cerita: <span>{{ $film->author }}</span></li>
+                                        <li>Negara: <span>{{ $film->country }}</span></li>
+                                        <li>Studio: <span>{{ $film->studio }}</span></li>
+                                        <li>Durasi : <span>{{ $film->duration }} menit</span></li>
+                                        <li>Genre : <span>{{ $film->category->name }}</span></li>
+                                        <li>Tahun Rilis: <span>{{ $film->year }}</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
                         </div>
                         
                         @else
@@ -134,7 +160,7 @@
                         <article class="my-3 fs-5">
                         {!! $film->synopsis !!}
                     </article>
-                    <a href="/dashboard/films" class="mt-4 text-bold">Back to Posts</a>
+                    <a href="/dashboard/films" class="btn bg-dark text-white mt-4 text-bold">Koleksi Film</a>
 
                    
                      

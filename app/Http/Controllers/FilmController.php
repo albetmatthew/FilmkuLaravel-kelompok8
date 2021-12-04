@@ -15,4 +15,13 @@ class FilmController extends Controller
             "films" => Film::latest()->get()
         ]);
     }
+
+
+    public function show(Film $film)
+    {
+        return view('film', [
+            'title' => 'MIFILM',
+            'film' => $film
+        ]);
+    }
 }

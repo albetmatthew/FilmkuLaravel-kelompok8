@@ -51,6 +51,11 @@ class DashboardPostController extends Controller
             'slug' => 'required|unique:films',
             'category_id' => 'required',
             'image' => 'image|file|max:1024',
+            'studio' => 'max:255',
+            'author' => 'max:255',
+            'year' => 'max:4',
+            'country' => 'max:100',
+            'duration' => 'digits_between:2,6',
             'synopsis' => 'required'
         ]);
 
@@ -63,7 +68,7 @@ class DashboardPostController extends Controller
 
         Film::create($validatedData);
 
-        return redirect('/dashboard/films')->with('success', 'Film baru telah ditambahkan!');
+        return redirect('/dashboard/films')->with('success', 'HOORAY, Film baru telah ditambahkan!');
     }
 
     /**
@@ -106,6 +111,11 @@ class DashboardPostController extends Controller
             'title' => 'required|max:255',
             'category_id' => 'required',
             'image' => 'image|file|max:1024',
+            'studio' => 'max:255',
+            'author' => 'max:255',
+            'year' => 'max:4',
+            'country' => 'max:100',
+            'duration' => 'digits_between:2,6',
             'synopsis' => 'required'
         ];
 
@@ -130,7 +140,7 @@ class DashboardPostController extends Controller
         Film::where('id', $film->id)
             ->update($validatedData);
 
-        return redirect('/dashboard/films')->with('success', 'Film berhasil diubah!');
+        return redirect('/dashboard/films')->with('success', 'YEAY..Film berhasil diubah!');
     }
 
     /**
@@ -146,7 +156,7 @@ class DashboardPostController extends Controller
         }
         Film::destroy($film->id);
 
-        return redirect('/dashboard/films')->with('success', 'Film telah dihapus!');
+        return redirect('/dashboard/films')->with('success', 'HIKS, Film telah dihapus!');
     }
 
     public function checkSlug(Request $request)
