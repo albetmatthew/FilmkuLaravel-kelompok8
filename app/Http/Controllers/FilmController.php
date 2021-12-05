@@ -10,9 +10,10 @@ class FilmController extends Controller
 {
     public function index()
     {
+
         return view('films', [
             "title" => "MIFILM- Daftar Film",
-            "films" => Film::latest()->get()
+            "films" => Film::latest()->filter(request(['search']))->get()
         ]);
     }
 

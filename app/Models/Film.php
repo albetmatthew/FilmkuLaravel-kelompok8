@@ -14,6 +14,12 @@ class Film extends Model
 
     protected $guarded = ['id'];
 
+    public function scopeFilter($query, array $filters)
+    {
+        if (isset($filters['search']) ? $filters['search'] : false) {
+            return $query->where('title', 'like', '%' . request('search') . '%')->orWhere('synopsis', 'like', '%' . request('search') . '%');
+        }
+    }
 
     public function category()
     {

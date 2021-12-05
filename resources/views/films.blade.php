@@ -77,6 +77,18 @@
         <div class="row">
             <h1 class="mb-3 text-center text-white">{{ $title }}</h1>
         </div>
+        {{-- <div class="row justify-content-center">
+          <div class="col-md-6">
+            <form action="/films">
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Cari film favorit" name="search">
+                <button class="btn btn-danger" type="submit">Cari</button>
+              </div>
+              
+            </form>
+          </div>
+          
+        </div> --}}
         @if($films->count())
         <div class="row">
           <div class="col-lg-6">
@@ -155,9 +167,22 @@
             @endforeach
         </div>
         @endif
+
+        
     </div>
 
+    <!-- Footer -->
+<footer class="bg-dark text-center text-white">
+  
 
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2021 Copyright:
+    <a class="text-white" href="/">mifilm.com - Kelompok 8</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
 
   
     <!-- Option 1: Bootstrap Bundle with Popper -->
