@@ -73,181 +73,120 @@
     <main id="main">
      
       <!-- ======= Rekomendasi Populer Section ======= -->
-      <section id="recommended" class="recommended section-bg">
+      <section id="recommended" class="recommended section-bg mt-5">
         <div class="container" data-aos="fade-up">
           <div class="section-title">
-            <h2>It's Yours</h2>
-            <p>Rekomendasi Populer</p>
+            <h2>Our Profile</h2>
+            <p>Kelompok 8 Pabwe 2021</p>
           </div>
 
-          <div class="row">
+          <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6">
               <div class="member" data-aos="zoom-in" data-aos-delay="100">
-                <a href="/films/{{ $films[0]->slug }}"> 
-                <img src="}" class="img-fluid" alt="" />
-                </a>
-                {{-- <div class="member-info">
+                
+                <img src="/assets/img/recommended/film-1.jpeg" class="img-fluid" alt="" />
+              
+                <div class="member-info">
                   <div class="member-info-content">
-                    <h4>Tomb Raider</h4>
+                    <h4>Albet Matthew Best Nainggolan</h4>
                     <span
-                      >Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, tenetur perferendis eum officiis repudiandae in unde deleniti quasi corrupti quos earum numquam dolor autem commodi quia quam temporibus. Praesentium
-                      veniam eius nostrum odio esse sequi, dignissimos eum beatae, quod culpa perferendis! Nisi voluptatum fugiat rem aliquid iusto esse dolorem officiis...</span
+                      >love what u do..</span
                     >
                   </div>
                   <div class="social">
-                    <a href=""><i class="bi bi-twitter"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
                     <a href=""><i class="bi bi-instagram"></i></a>
                   </div>
-                </div> --}}
+                </div>
               </div>
             </div>
 
             <div class="col-lg-4 col-md-6">
               <div class="member" data-aos="zoom-in" data-aos-delay="200">
-                <a href="/films/{{ $films[1]->slug }}"> 
-                  <img src="{{ asset('storage/' . $films[1]->image) }}" class="img-fluid" alt="" />
-                </a>
-                {{-- <div class="member-info">
+               
+                <img src="assets/img/recommended/film-2.jpg" class="img-fluid" alt="" />
+                <div class="member-info">
                   <div class="member-info-content">
-                    <h4>Bad Boys for Life</h4>
+                    <h4>Rewina Pakpahan</h4>
                     <span
-                      >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias nemo nihil iste impedit magni in maiores eos accusamus amet ducimus. Libero, quibusdam optio consequuntur at obcaecati dolor dignissimos! Praesentium
-                      harum nobis quibusdam vero, ex voluptatem assumenda quam maiores ipsam nemo consequatur pariatur et magnam nihil perferendis ab inventore nam dignissimos...</span
+                      ></span
                     >
                   </div>
                   <div class="social">
-                    <a href=""><i class="bi bi-twitter"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
                     <a href=""><i class="bi bi-instagram"></i></a>
                   </div>
-                </div> --}}
+                </div>
               </div>
             </div>
 
             <div class="col-lg-4 col-md-6">
               <div class="member" data-aos="zoom-in" data-aos-delay="300">
-                <a href="/films/{{ $films[2]->slug }}"> 
-                  <img src="{{ asset('storage/' . $films[2]->image) }}" class="img-fluid" alt="" />
-                </a>
-                {{-- <div class="member-info">
+              
+                <img src="assets/img/recommended/film-3.jpg" class="img-fluid" alt="" />
+                <div class="member-info">
                   <div class="member-info-content">
-                    <h4>The Avengers</h4>
+                    <h4>Josua Gaolus Nainggolan</h4>
                     <span
-                      >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis iste sequi repellendus sunt? Autem sequi dolor delectus illo aut, deserunt minus iure aliquid, praesentium vitae quos earum impedit dolorem fugiat
-                      expedita tenetur? Ex ea omnis accusamus officiis modi! Quae tenetur blanditiis eius explicabo adipisci, iusto nostrum ipsa ea minima porro...</span
+                      >penyanyi papan atas..</span
                     >
                   </div>
                   <div class="social">
-                    <a href=""><i class="bi bi-twitter"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
                     <a href=""><i class="bi bi-instagram"></i></a>
                   </div>
-                </div> --}}
+                </div>
               </div>
             </div>
 
             <div class="col-lg-4 col-md-6">
               <div class="member" data-aos="zoom-in" data-aos-delay="300">
-                <a href="/films/{{ $films[3]->slug }}"> 
-                  <img src="{{ asset('storage/' . $films[3]->image) }}" class="img-fluid" alt="" />
-                </a>
-                {{-- <div class="member-info">
+               
+                <img src="assets/img/recommended/film-4.jpg" class="img-fluid" alt="" />
+                <div class="member-info">
                   <div class="member-info-content">
-                    <h4>Dua Garis Biru</h4>
+                    <h4>Hana Maria Siahaan</h4>
                     <span
-                      >Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis adipisci est porro amet! Fugit atque quos unde distinctio tempore officia facere, deleniti temporibus est tenetur adipisci et optio provident quam iusto
-                      fugiat pariatur numquam veritatis, repudiandae placeat! Ea eos voluptate exercitationem officiis doloribus minus, fugit nam placeat dolor ex nulla...</span
+                      >
+                      </span
                     >
                   </div>
                   <div class="social">
-                    <a href=""><i class="bi bi-twitter"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
                     <a href=""><i class="bi bi-instagram"></i></a>
                   </div>
-                </div> --}}
+                </div>
               </div>
             </div>
 
             <div class="col-lg-4 col-md-6">
               <div class="member" data-aos="zoom-in" data-aos-delay="300">
-                <a href="/films/{{ $films[4]->slug }}"> 
-                  <img src="{{ asset('storage/' . $films[4]->image) }}" class="img-fluid" alt="" />
-                </a>
-                {{-- <div class="member-info">
+               
+                <img src="assets/img/recommended/film-5.jpeg" class="img-fluid" alt="" />
+                <div class="member-info">
                   <div class="member-info-content">
-                    <h4>The Perfect Husband</h4>
+                    <h4>Theresia Mega Rumapea</h4>
                     <span
-                      >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis perferendis exercitationem minus iste, maiores amet repellat asperiores quam modi sapiente quos, maxime repellendus itaque, voluptate molestiae deleniti
-                      ad sequi blanditiis sint fuga fugiat corrupti odio dolorum! Cupiditate, vel. Autem molestias vero vel, ducimus distinctio nihil nam sint. Excepturi, ex provident...</span
+                      ></span
                     >
                   </div>
                   <div class="social">
-                    <a href=""><i class="bi bi-twitter"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
                     <a href=""><i class="bi bi-instagram"></i></a>
                   </div>
-                </div> --}}
+                </div>
               </div>
             </div>
 
             <div class="col-lg-4 col-md-6">
               <div class="member" data-aos="zoom-in" data-aos-delay="300">
                 <img src="assets/img/recommended/film-6.jpeg" class="img-fluid" alt="" />
-                {{-- <div class="member-info">
+                <div class="member-info">
                   <div class="member-info-content">
-                    <h4>Brave</h4>
+                    <h4>Kristina Tampubolon</h4>
                     <span
-                      >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia, excepturi aperiam quod dolorum, hic, natus ipsam vitae pariatur soluta cumque facilis repellendus corporis perferendis! Minus similique, officiis
-                      veritatis rem nostrum illo, magni magnam nisi ullam amet nam dolorem asperiores unde voluptatum facere consequuntur? Iusto fuga autem, dolorem maiores temporibus et...</span
+                      ></span
                     >
                   </div>
                   <div class="social">
-                    <a href=""><i class="bi bi-twitter"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
                     <a href=""><i class="bi bi-instagram"></i></a>
                   </div>
-                </div> --}}
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-              <div class="member" data-aos="zoom-in" data-aos-delay="300">
-                <img src="assets/img/recommended/film-7.jpg" class="img-fluid" alt="" />
-                {{-- <div class="member-info">
-                  <div class="member-info-content">
-                    <h4>Frozen II</h4>
-                    <span
-                      >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus corporis voluptate maxime, quo cum reprehenderit illo eos id minima in illum error reiciendis eum itaque nesciunt, doloremque excepturi rem! Quasi
-                      amet excepturi illum unde non? Minus modi ea, dolores placeat provident, pariatur rem nihil quos illum fuga, rerum doloremque id...</span
-                    >
-                  </div>
-                  <div class="social">
-                    <a href=""><i class="bi bi-twitter"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                  </div>
-                </div> --}}
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-              <div class="member" data-aos="zoom-in" data-aos-delay="300">
-                <img src="assets/img/recommended/film-8.jpg" class="img-fluid" alt="" />
-                {{-- <div class="member-info">
-                  <div class="member-info-content">
-                    <h4>Up</h4>
-                    <span
-                      >Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam nisi sunt ullam, dolorem iste deserunt quos autem repudiandae quisquam aliquam saepe nihil ad, atque eius, iure cum assumenda. Facilis itaque quidem
-                      optio est possimus quod, distinctio deleniti quos beatae saepe totam similique fugiat culpa assumenda tenetur aspernatur? Molestiae, optio quaerat...</span
-                    >
-                  </div>
-                  <div class="social">
-                    <a href=""><i class="bi bi-twitter"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                  </div>
-                </div> --}}
+                </div>
               </div>
             </div>
 
@@ -273,177 +212,15 @@
           </div>
 
           <div class="text-center">
-            <a href="/films">
+            <a href="/">
           
-              <button type="submit">Lihat lebih banyak</button></div>
+              <button type="submit">Beranda</button></div>
           </a>
         </div>
       </section>
       <!-- End Rekomendasi Populer Section -->
 
-      <!-- ======= Specials MIFILM Section ======= -->
-      <section id="specials" class="specials">
-        <div class="container" data-aos="fade-up">
-          <div class="section-title">
-            <h2>Hi Everyone ?</h2>
-            <p>Tanya MIFILM</p>
-          </div>
-
-          <div class="row" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-3">
-              <ul class="nav nav-tabs flex-column">
-                <li class="nav-item">
-                  <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Apa itu MIFILM ?</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-bs-toggle="tab" href="#tab-2">MIFILM harus berlangganan ?</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Di mana saya dapat buka MIFILM ?</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Manfaat buka MIFILM ?</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-bs-toggle="tab" href="#tab-5">MIFILM tersedia cerita untuk anak-anak ?</a>
-                </li>
-              </ul>
-            </div>
-            <div class="col-lg-9 mt-4 mt-lg-0">
-              <div class="tab-content">
-                <div class="tab-pane active show" id="tab-1">
-                  <div class="row">
-                    <div class="col-lg-8 details order-2 order-lg-1">
-                      <h3>MIFILM ?</h3>
-                      <p class="fst-italic">Website berisi informasi-informasi film</p>
-                      <p>
-                        Netflix adalah layanan yang menawarkan berbagai informasi dari film, anime, dokumenter, dan banyak lagi di ribuan perangkat yang terhubung ke Internet. Kamu bisa membaca sepuasnya, kapan pun kamu mau, tanpa satu
-                        iklan pun. Selalu ada bacaan baru dan film baru yang ditambahkan setiap minggu!
-                      </p>
-                    </div>
-                    <div class="col-lg-4 text-center order-1 order-lg-2">
-                      <img src="assets/img/tab1_mifilm.jpg" alt="" class="img-fluid" />
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-pane" id="tab-2">
-                  <div class="row">
-                    <div class="col-lg-8 details order-2 order-lg-1">
-                      <h3>Berbayar ?</h3>
-                      <p class="fst-italic">MIFILM tidak berbayar</p>
-                      <p>MIFILM hanya ingin membagikan sekadar informasi dari berbagai film yang ada dengan harapan pengunjung website mendapatkan film yang disukai sebelum menonton.</p>
-                    </div>
-                    <div class="col-lg-4 text-center order-1 order-lg-2">
-                      <img src="assets/img/tab2_money.jpg" alt="" class="img-fluid" />
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-pane" id="tab-3">
-                  <div class="row">
-                    <div class="col-lg-8 details order-2 order-lg-1">
-                      <h3>Buka MIFILM ?</h3>
-                      <p class="fst-italic">Tentu dapat dimana saja.</p>
-                      <p>
-                        Baca dan cari tahu di mana pun, kapan pun. Masuk ke akun MIFILM-mu untuk membaca dan mencari langsung film yang kamu ingin nonton di mifilm.com dari komputer pribadi atau di perangkat yang terhubung ke Internet dan
-                        mendukung aplikasi MIFILM, termasuk smartphone, tablet. Kamu juga bisa men-download bacaan cerita yang sudah kamu tentuka akan menontonnya dengan aplikasi iOS, Android, atau Windows 10. Gunakan download untuk baca
-                        saat kamu di perjalanan dan tidak punya koneksi Internet. Bawa MFILM ke mana saja.
-                      </p>
-                    </div>
-                    <div class="col-lg-4 text-center order-1 order-lg-2">
-                      <img src="assets/img/tab3_everywhere.jpg" alt="" class="img-fluid" />
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-pane" id="tab-4">
-                  <div class="row">
-                    <div class="col-lg-8 details order-2 order-lg-1">
-                      <h3>Untuk apa lihat MIFILM ?</h3>
-                      <p class="fst-italic">Referensi Film yang terbaru dan recommended</p>
-                      <p>MIFILM memiliki pustaka lengkap yang berisi cerita film panjang, film dokumenter, acara TV, anime dan lebih banyak lagi. Baca dan cari film sepuasnya, kapan pun kamu mau.</p>
-                    </div>
-                    <div class="col-lg-4 text-center order-1 order-lg-2">
-                      <img src="assets/img/tab4_manfaat.jpg" alt="" class="img-fluid" />
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-pane" id="tab-5">
-                  <div class="row">
-                    <div class="col-lg-8 details order-2 order-lg-1">
-                      <h3>MIFILM untuk anak-anak ?</h3>
-                      <p class="fst-italic">Tentu saja bukan.</p>
-                      <p>
-                        MIFILM berisi informasi-informasi mengenai berbagai film baik itu film untuk setiap kalangan, termasuk dewasa, remaja bahkan anak-anak. Oleh karena itu, orangtua lah yang hendak menggunakan MIFILM untuk mencari film
-                        yang cocok untuk umur anak.
-                      </p>
-                    </div>
-                    <div class="col-lg-4 text-center order-1 order-lg-2">
-                      <img src="assets/img/tab5_child.jpg" alt="" class="img-fluid" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End Specials MIFILM Section -->
-
-      <!-- ======= Events Section Event 3 Film ======= -->
-      <section id="events" class="events">
-        <div class="container" data-aos="fade-up">
-          <div class="section-title">
-            <h2>It's to you MIFILMers</h2>
-            <p>3 Film Recommended Bulan ini</p>
-          </div>
-
-          <div class="events-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="row event-item">
-                  <div class="col-lg-6 text-center">
-                    <img src="{{ asset('storage/' . $films[0]->image) }}" class="img-fluid" alt="" style="height: 400px"/>
-                  </div>
-                  <div class="col-lg-6 pt-4 pt-lg-0 content">
-                    <h3>{{ $films[0]->title }}</h3>
-                    <p class="fst-italic">{{ $films[0]->excerpt }}</p>
-                  
-                  </div>
-                </div>
-              </div>
-              <!-- End testimonial item -->
-
-              <div class="swiper-slide">
-                <div class="row event-item">
-                  <div class="col-lg-6 text-center">
-                    <img src="{{ asset('storage/' . $films[1]->image) }}" class="img-fluid" alt="" style="height: 400px"/>
-                  </div>
-                  <div class="col-lg-6 pt-4 pt-lg-0 content">
-                    <h3>{{ $films[1]->title }}</h3>
-                    <p class="fst-italic">{{ $films[1]->excerpt }}</p>
-                   
-                  </div>
-                </div>
-              </div>
-              <!-- End testimonial item -->
-
-              <div class="swiper-slide">
-                <div class="row event-item">
-                  <div class="col-lg-6 text-center">
-                    <img src="{{ asset('storage/' . $films[2]->image) }}" class="img-fluid" alt="" style="height: 400px"/>
-                  </div>
-                  <div class="col-lg-6 pt-4 pt-lg-0 content">
-                    <h3>{{ $films[2]->title }}</h3>
-                    <p class="fst-italic">{{ $films[2]->excerpt }}</p>
-              
-                  </div>
-                </div>
-              </div>
-              <!-- End testimonial item -->
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-      </section>
+  
       <!-- End Events Section -->
     </main>
     <!-- End #main -->

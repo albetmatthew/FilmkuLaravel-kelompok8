@@ -89,3 +89,7 @@ Route::get('/film', function () {
 });
 
 Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
+
+Route::get('/aboutus', function () {
+    return view('aboutus.index');
+});

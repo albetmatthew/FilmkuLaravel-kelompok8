@@ -80,7 +80,7 @@
             <a href="/films" class="btns btn-menu animated fadeInUp scrollto">Ketahui lebih banyak jenis film > </a>
           </div>
           <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
-            <a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" class="glightbox play-btn"></a>
+            {{-- <a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" class="glightbox play-btn"></a> --}}
           </div>
         </div>
       </div>
@@ -233,7 +233,9 @@
 
             <div class="col-lg-4 col-md-6">
               <div class="member" data-aos="zoom-in" data-aos-delay="300">
-                <img src="assets/img/recommended/film-6.jpeg" class="img-fluid" alt="" />
+                <a href="/films/{{ $films[5]->slug }}"> 
+                <img src="{{ asset('storage/' . $films[5]->image) }}" class="img-fluid" alt="" />
+              </a>
                 {{-- <div class="member-info">
                   <div class="member-info-content">
                     <h4>Brave</h4>
@@ -253,7 +255,9 @@
 
             <div class="col-lg-4 col-md-6">
               <div class="member" data-aos="zoom-in" data-aos-delay="300">
-                <img src="assets/img/recommended/film-7.jpg" class="img-fluid" alt="" />
+                <a href="/films/{{ $films[6]->slug }}"> 
+                <img src="{{ asset('storage/' . $films[6]->image) }}" class="img-fluid" alt="" />
+              </a>
                 {{-- <div class="member-info">
                   <div class="member-info-content">
                     <h4>Frozen II</h4>
@@ -273,7 +277,9 @@
 
             <div class="col-lg-4 col-md-6">
               <div class="member" data-aos="zoom-in" data-aos-delay="300">
-                <img src="assets/img/recommended/film-8.jpg" class="img-fluid" alt="" />
+                <a href="/films/{{ $films[7]->slug }}"> 
+                <img src="{{ asset('storage/' . $films[7]->image) }}" class="img-fluid" alt="" />
+              </a>
                 {{-- <div class="member-info">
                   <div class="member-info-content">
                     <h4>Up</h4>
@@ -293,7 +299,9 @@
 
             <div class="col-lg-4 col-md-6">
               <div class="member" data-aos="zoom-in" data-aos-delay="300">
-                <img src="assets/img/recommended/film-9.jpg" class="img-fluid" alt="" />
+                <a href="/films/{{ $films[8]->slug }}"> 
+                <img src="{{ asset('storage/' . $films[8]->image) }}" class="img-fluid" alt="" />
+              </a>
                 {{-- <div class="member-info">
                   <div class="member-info-content">
                     <h4>The Croods</h4>
@@ -441,12 +449,15 @@
               <div class="swiper-slide">
                 <div class="row event-item">
                   <div class="col-lg-6 text-center">
+                    <a href="/films/{{ $films[0]->slug }}">
                     <img src="{{ asset('storage/' . $films[0]->image) }}" class="img-fluid" alt="" style="height: 400px"/>
+                   </a>
                   </div>
                   <div class="col-lg-6 pt-4 pt-lg-0 content">
                     <h3>{{ $films[0]->title }}</h3>
+                     
                     <p class="fst-italic">{{ $films[0]->excerpt }}</p>
-                  
+                    
                   </div>
                 </div>
               </div>
@@ -455,7 +466,9 @@
               <div class="swiper-slide">
                 <div class="row event-item">
                   <div class="col-lg-6 text-center">
+                    <a href="/films/{{ $films[1]->slug }}">
                     <img src="{{ asset('storage/' . $films[1]->image) }}" class="img-fluid" alt="" style="height: 400px"/>
+                  </a>
                   </div>
                   <div class="col-lg-6 pt-4 pt-lg-0 content">
                     <h3>{{ $films[1]->title }}</h3>
@@ -469,7 +482,9 @@
               <div class="swiper-slide">
                 <div class="row event-item">
                   <div class="col-lg-6 text-center">
+                    <a href="/films/{{ $films[1]->slug }}">
                     <img src="{{ asset('storage/' . $films[2]->image) }}" class="img-fluid" alt="" style="height: 400px"/>
+                    </a>
                   </div>
                   <div class="col-lg-6 pt-4 pt-lg-0 content">
                     <h3>{{ $films[2]->title }}</h3>
@@ -526,7 +541,7 @@
           &copy; Copyright <strong><span>MIFILM</span></strong
           >. All Rights Reserved
         </div>
-        <div class="credits">Designed by <a href="">Kelompok8_Pawbe</a></div>
+        <div class="credits">Designed by <a href="/aboutus">Kelompok8_Pawbe</a></div>
       </div>
     </footer>
     <!-- End Footer -->
