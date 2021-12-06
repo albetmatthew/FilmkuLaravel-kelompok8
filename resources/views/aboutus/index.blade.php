@@ -192,21 +192,19 @@
 
             <div class="col-lg-4 col-md-6">
               <div class="member" data-aos="zoom-in" data-aos-delay="300">
-                <img src="assets/img/recommended/film-9.jpg" class="img-fluid" alt="" />
-                {{-- <div class="member-info">
+                <img src="assets/img/recommended/film-9.png" class="img-fluid" alt="" />
+                <div class="member-info">
                   <div class="member-info-content">
-                    <h4>The Croods</h4>
+                    <h4>Yoni Siahaan</h4>
                     <span
-                      >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident vel, voluptatibus laudantium quis quam cum aspernatur dolore expedita natus tempore? Doloremque ipsum provident recusandae nulla accusantium pariatur
-                      numquam. Modi voluptates sed ab earum quasi, aliquam quibusdam minus ratione fuga blanditiis quo ipsa facilis cumque dolorem omnis non consequatur veritatis tenetur...</span
+                      ></span
                     >
                   </div>
                   <div class="social">
-                    <a href=""><i class="bi bi-twitter"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
+                
                     <a href=""><i class="bi bi-instagram"></i></a>
                   </div>
-                </div> --}}
+                </div>
               </div>
             </div>
           </div>
