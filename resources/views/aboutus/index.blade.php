@@ -94,7 +94,7 @@
                     >
                   </div>
                   <div class="social">
-                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.instagram.com/ma_tbst/" target="_blank"><i class="bi bi-instagram"></i></a>
                   </div>
                 </div>
               </div>
@@ -112,7 +112,7 @@
                     >
                   </div>
                   <div class="social">
-                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.instagram.com/rewinapakpahan_/" target="_blank"><i class="bi bi-instagram"></i></a>
                   </div>
                 </div>
               </div>
@@ -130,7 +130,7 @@
                     >
                   </div>
                   <div class="social">
-                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.instagram.com/josua.py/" target="_blank"><i class="bi bi-instagram"></i></a>
                   </div>
                 </div>
               </div>
@@ -149,7 +149,7 @@
                     >
                   </div>
                   <div class="social">
-                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.instagram.com/hanamaria.s/" target="_blank"><i class="bi bi-instagram"></i></a>
                   </div>
                 </div>
               </div>
@@ -167,7 +167,7 @@
                     >
                   </div>
                   <div class="social">
-                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.instagram.com/megarmp/"><i class="bi bi-instagram"></i></a>
                   </div>
                 </div>
               </div>
@@ -184,7 +184,7 @@
                     >
                   </div>
                   <div class="social">
-                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.instagram.com/kristina_tampubolon19/" target="_blank"><i class="bi bi-instagram"></i></a>
                   </div>
                 </div>
               </div>
@@ -202,7 +202,7 @@
                   </div>
                   <div class="social">
                 
-                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.instagram.com/yonisiahaan/" target="_blank"><i class="bi bi-instagram"></i></a>
                   </div>
                 </div>
               </div>

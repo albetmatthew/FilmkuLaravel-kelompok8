@@ -365,7 +365,7 @@
                       <h3>MIFILM ?</h3>
                       <p class="fst-italic">Website berisi informasi-informasi film</p>
                       <p>
-                        Netflix adalah layanan yang menawarkan berbagai informasi dari film, anime, dokumenter, dan banyak lagi di ribuan perangkat yang terhubung ke Internet. Kamu bisa membaca sepuasnya, kapan pun kamu mau, tanpa satu
+                        MIFILM adalah layanan yang menawarkan berbagai informasi dari film, anime, dokumenter, dan banyak lagi di ribuan perangkat yang terhubung ke Internet. Kamu bisa membaca sepuasnya, kapan pun kamu mau, tanpa satu
                         iklan pun. Selalu ada bacaan baru dan film baru yang ditambahkan setiap minggu!
                       </p>
                     </div>
